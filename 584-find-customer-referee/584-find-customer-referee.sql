@@ -7,11 +7,11 @@ Evaluates both SQL expressions and returns 1 if they are not equal and 0 if they
 # WHERE referee_id != 2
 # OR referee_id is null
 
-# SELECT name FROM Customer
-# WHERE referee_id <> 2
-# OR referee_id is null
+SELECT name FROM Customer
+WHERE referee_id <> 2
+OR referee_id is null
 
-SELECT name from Customer
-WHERE id not in (
-    SELECT id FROM Customer 
-    WHERE referee_id=2);
+# SELECT name from Customer
+# WHERE id not in (
+#     SELECT id FROM Customer 
+#     WHERE referee_id=2);
