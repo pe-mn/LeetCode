@@ -5,12 +5,11 @@
 
 # It is mainly used to assign names to integral constants, the names make a program easy to read and maintain.
 
-# IF(condition, value_if_true, value_if_false)
-UPDATE Salary SET sex = IF(sex = 'f' , 'm','f');
+# # IF(condition, value_if_true, value_if_false)
+# UPDATE Salary SET sex = IF(sex = 'f' , 'm','f');
 
-# UPDATE salary SET sex =
-# CASE
-# WHEN sex = 'm' THEN 'f'
-# WHEN sex = 'f' THEN 'm'
-# # ELSE sex
-# END
+UPDATE salary SET sex =
+CASE
+  WHEN sex = 'm' THEN 'f'
+  ELSE 'm'
+END
