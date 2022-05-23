@@ -28,10 +28,20 @@ class Solution:
 
 #----------------------------------------------------------------------------------------
 
-# since array of unique integers 
+# # since array of unique integers 
 
-        return (sum(salary)-min(salary)-max(salary)) / (len(salary)-2)
+#         return (sum(salary)-min(salary)-max(salary)) / (len(salary)-2)
 
-# take salary sum and subtract both the min and max values 
-# divide by the length of the array minus 2 (excluding min and max values) 
-# and convert to float
+# # take salary sum and subtract both the min and max values 
+# # divide by the length of the array minus 2 (excluding min and max values) 
+# # and convert to float
+
+#----------------------------------------------------------------------------------------
+
+        diff = len(salary) - 2
+        sum = 0
+        sorted_salary = sorted(salary)
+        for i in range(1, len(salary)-1):
+            sum = sum + sorted_salary[i]
+            
+        return sum/diff
