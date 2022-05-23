@@ -22,6 +22,16 @@ class Solution:
     
 #----------------------------------------------------------------------------------------
     
+# # since array of unique integers 
+#         salary.sort()
+#         return statistics.mean(salary[1:-1])
+
+#----------------------------------------------------------------------------------------
+
 # since array of unique integers 
-        salary.sort()
-        return statistics.mean(salary[1:-1])
+
+        return (sum(salary)-min(salary)-max(salary)) / (len(salary)-2)
+
+# take salary sum and subtract both the min and max values 
+# divide by the length of the array minus 2 (excluding min and max values) 
+# and convert to float
