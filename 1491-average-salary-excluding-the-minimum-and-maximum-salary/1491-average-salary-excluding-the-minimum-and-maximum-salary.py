@@ -15,13 +15,13 @@ class Solution:
 
 #----------------------------------------------------------------------------------------
 
-# Note: use sort after set as set don't keep order
-        salary_new = list(set(salary))
-        salary_new.sort()
-        return statistics.mean(salary_new[1:-1])
+# # Note: use sort after set as set don't keep order
+#         salary_new = list(set(salary))
+#         salary_new.sort()
+#         return statistics.mean(salary_new[1:-1])
     
 #----------------------------------------------------------------------------------------
     
 # since array of unique integers 
-        # salary.sort()
-        # return statistics.mean(salary[1:-1])
+        salary.sort()
+        return statistics.mean(salary[1:-1])
