@@ -14,23 +14,23 @@
 
 # -----------------------------------------------------------------------------------
 
-select id,
-case
-    when p_id is null then 'Root'
-    when id in (select p_id from Tree) then 'Inner'
-    else 'Leaf'
-end as type
-from Tree
-order by id;
+# select id,
+# case
+#     when p_id is null then 'Root'
+#     when id in (select p_id from Tree) then 'Inner'
+#     else 'Leaf'
+# end as type
+# from Tree
+# order by id;
 
 # -----------------------------------------------------------------------------------
 
-# SELECT tree.id, 
-# # TWO IFs ONE INSIDE ANOTHER
-# IF(ISNULL(tree.p_id),'Root', 
-# # IF(CONDITION, VALUE WHEN TRUE, VALUE WHEN FALSE)
-# IF(tree.id IN (SELECT DISTINCT(p_id) FROM tree), 'Inner','Leaf')) Type 
-# FROM tree ORDER BY tree.id
+SELECT tree.id, 
+# TWO IFs ONE INSIDE ANOTHER
+IF(ISNULL(tree.p_id),'Root', 
+# IF(CONDITION, VALUE WHEN TRUE, VALUE WHEN FALSE)
+IF(tree.id IN (SELECT DISTINCT(p_id) FROM tree), 'Inner','Leaf')) Type 
+FROM tree ORDER BY tree.id
 
 
 
