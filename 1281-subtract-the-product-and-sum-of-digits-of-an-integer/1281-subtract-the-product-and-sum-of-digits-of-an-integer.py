@@ -21,11 +21,18 @@ class Solution:
 # if the number can be divided by 10, the the product is 0
 # if not, then the remaining (n%10) is the first digit
 # n//10 --> gives the remaining digits
-        prod=1
-        Sum=0
-        while n>0:
-            a=n%10
-            prod*=a
-            Sum+=a
-            n=n//10
-        return prod-Sum
+   
+			# s, p = 0, 1
+			# while n:
+			# # Find the trailing digit
+			# num = n % 10
+			# s = s + num
+			# p = p * num
+			# # Update n by removing the last digit
+			# n = n // 10
+			# return p - s
+    
+# -----------------------------------------------------------------   
+    
+        digits = [int(x) for x in str(n)]
+        return reduce(lambda x, y: x * y, digits) - sum(digits)
