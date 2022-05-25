@@ -1,18 +1,19 @@
+import math
 class Solution:
     def subtractProductAndSum(self, n: int) -> int:        
-        product = 1
-        summation = 0
-        for i in str(n):
-            product = product * int(i)
-            summation = summation + int(i)
+#         product = 1
+#         summation = 0
+#         for i in str(n):
+#             product = product * int(i)
+#             summation = summation + int(i)
         
-        return (product - summation)    
+#         return (product - summation)    
     
 # -----------------------------------------------------------------   
 
-		# # l = map(int, str(n))
-		# l=[int(i) for i in str(n)]
-		# return math.prod(l)-sum(l)    
+        # # l = map(int, str(n))
+        l = [int(i) for i in str(n)]
+        return math.prod(l)-sum(l)    
  
 # -----------------------------------------------------------------   
 
