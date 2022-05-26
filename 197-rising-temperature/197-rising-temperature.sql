@@ -25,11 +25,22 @@
 
 # -------------------------------------------------------------
 
+# SELECT w2.id FROM Weather w1, Weather w2 
+# WHERE w2.recordDate = DATE_ADD(w1.recordDate, INTERVAL 1 DAY) 
+# AND w2.Temperature > w1.Temperature;
+
+# -------------------------------------------------------------
+
+# # Wrong Answer
+# SELECT w2.id FROM Weather w1, Weather w2 
+# WHERE w2.recordDate - w1.recordDate = 1
+# AND w2.Temperature > w1.Temperature;
+
+# -------------------------------------------------------------
+
 SELECT w2.id FROM Weather w1, Weather w2 
-WHERE w2.recordDate = DATE_ADD(w1.recordDate, INTERVAL 1 DAY) 
+WHERE TO_DAYS(w2.recordDate) - TO_DAYS(w1.recordDate) = 1
 AND w2.Temperature > w1.Temperature;
-
-
 
 
 
