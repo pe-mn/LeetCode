@@ -1,7 +1,7 @@
 class Solution:
     def nearestValidPoint(self, x: int, y: int, points: List[List[int]]) -> int:
         # Handle Edge Caces
-        if all( (point[0]!=x and point[1]==y) for point in points):
+        if all( (point[0]!=x and point[1]!=y) for point in points):
             return -1
                 
         distance = float('inf')
