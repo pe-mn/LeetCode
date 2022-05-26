@@ -19,15 +19,15 @@
 
 # -------------------------------------------------------------
 
-SELECT W1.id FROM weather W1, weather W2 
-WHERE datediff(W1.recordDate,W2.recordDate)=1 
-AND W1.temperature>W2.temperature;
+# SELECT W1.id FROM weather W1, weather W2 
+# WHERE datediff(W1.recordDate,W2.recordDate)=1 
+# AND W1.temperature>W2.temperature;
 
 # -------------------------------------------------------------
 
-# SELECT w2.id FROM Weather w1, Weather w2 
-# WHERE w2.recordDate = DATE_ADD(w1.recordDate, INTERVAL 1 DAY) 
-# AND w2.Temperature > w1.Temperature;
+SELECT w2.id FROM Weather w1, Weather w2 
+WHERE w2.recordDate = DATE_ADD(w1.recordDate, INTERVAL 1 DAY) 
+AND w2.Temperature > w1.Temperature;
 
 
 
