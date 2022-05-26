@@ -13,15 +13,15 @@
 
 # -------------------------------------------------------------
 
-SELECT W1.id FROM Weather W1 JOIN Weather W2 
-ON W2.recordDate = DATE_SUB(W1.recordDate,interval 1 DAY)
-WHERE W1.temperature > W2.temperature
+# SELECT W1.id FROM Weather W1 JOIN Weather W2 
+# ON W2.recordDate = DATE_SUB(W1.recordDate,interval 1 DAY)
+# WHERE W1.temperature > W2.temperature
 
 # -------------------------------------------------------------
 
-# SELECT W1.id FROM weather W1, weather W2 
-# WHERE datediff(W1.recordDate,W2.recordDate)=1 
-# AND W1.temperature>W2.temperature;
+SELECT W1.id FROM weather W1, weather W2 
+WHERE datediff(W1.recordDate,W2.recordDate)=1 
+AND W1.temperature>W2.temperature;
 
 # -------------------------------------------------------------
 
