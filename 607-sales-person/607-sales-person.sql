@@ -12,19 +12,19 @@
 
 # --------------------------------------------------------------------------------
 
-SELECT name FROM salesperson
-WHERE sales_id NOT IN 
-(
-   SELECT sales_id FROM orders WHERE com_id IN 
-	(SELECT com_id FROM company WHERE name='RED')
-)
-
-
-
 # SELECT name FROM salesperson
-# WHERE sales_id NOT IN (SELECT sales_id FROM orders 
-#                        LEFT JOIN company USING(com_id)  
-#                        WHERE company.name='RED')
+# WHERE sales_id NOT IN 
+# (
+#    SELECT sales_id FROM orders WHERE com_id IN 
+# 	(SELECT com_id FROM company WHERE name='RED')
+# )
+
+
+
+SELECT name FROM salesperson
+WHERE sales_id NOT IN (SELECT sales_id FROM orders 
+                       LEFT JOIN company USING(com_id)  
+                       WHERE company.name='RED')
       
 # --------------------------------------------------------------------------------
       
