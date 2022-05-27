@@ -1,16 +1,16 @@
 class Solution:
     def arraySign(self, nums: List[int]) -> int:
-        # Handle 0s
-        if 0 in nums:
-            return(0)
+#         # Handle 0s
+#         if 0 in nums:
+#             return(0)
         
-        # Handle -ve cases
-        i = 0
-        for num in nums:
-            if num < 0:
-                i+=1
+#         # Handle -ve cases
+#         i = 0
+#         for num in nums:
+#             if num < 0:
+#                 i+=1
         
-        return -1 if i%2 else 1
+#         return -1 if i%2 else 1
 
 # --------------------------------------------------------------
 
@@ -24,8 +24,8 @@ class Solution:
     
 # --------------------------------------------------------------
          
-#         product = reduce(lambda x,y: x*y, nums)
-#         return 0 if not product else 1 if product > 0 else -1
+        product = reduce(lambda x,y: x*y, nums)
+        return 0 if not product else 1 if product > 0 else -1
 
 # --------------------------------------------------------------
         
