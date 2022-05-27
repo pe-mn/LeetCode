@@ -26,9 +26,9 @@ class Solution:
         # return len(s) == len(arr) and all(diff % gap == 0 for diff in s)                    
 # --------------------------------------------------------------------
             
-        arr.sort()
-        return len(set(arr[i-1] - arr[i] for i in range(1, len(arr)))) == 1        
+        # arr.sort()
+        # return len(set(arr[i-1] - arr[i] for i in range(1, len(arr)))) == 1        
     
 # --------------------------------------------------------------------
 
-        # return arr.sort() or all([(j-i) == arr[1] - arr[0] for i, j in zip(arr, arr[1:])])
+        return arr.sort() or all([(j-i) == arr[1] - arr[0] for i, j in zip(arr, arr[1:])])
