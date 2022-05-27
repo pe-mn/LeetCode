@@ -21,19 +21,19 @@
 
 
 
-SELECT name FROM salesperson
-WHERE sales_id NOT IN (SELECT sales_id FROM orders 
-                       LEFT JOIN company USING(com_id)  
-                       WHERE company.name='RED')
+# SELECT name FROM salesperson
+# WHERE sales_id NOT IN (SELECT sales_id FROM orders 
+#                        LEFT JOIN company USING(com_id)  
+#                        WHERE company.name='RED')
       
 # --------------------------------------------------------------------------------
       
-# select s.name from
-# salesperson s
-# left join orders o USING(sales_id)
-# left join company c USING(com_id)
-# group by s.name
-# having count(order_id)=0 or not sum(c.name='RED')>0
+select s.name from
+salesperson s
+left join orders o USING(sales_id)
+left join company c USING(com_id)
+group by s.name
+having count(order_id)=0 or not sum(c.name='RED')>0
 
 # --------------------------------------------------------------------------------
 
