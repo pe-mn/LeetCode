@@ -28,18 +28,18 @@
       
 # --------------------------------------------------------------------------------
       
-select s.name from
-salesperson s
-left join orders o USING(sales_id)
-left join company c USING(com_id)
-group by s.name
-having count(order_id)=0 or not sum(c.name='RED')>0
+# select s.name from
+# salesperson s
+# left join orders o USING(sales_id)
+# left join company c USING(com_id)
+# group by s.name
+# having count(order_id)=0 or not sum(c.name='RED')>0
 
 # --------------------------------------------------------------------------------
 
-# SELECT s.name FROM salesperson s
-# LEFT JOIN orders o USING (sales_id)
-# LEFT JOIN company c USING (com_id)
-# GROUP BY sales_id
-# HAVING SUM(CASE c.name WHEN 'RED' THEN 1 ELSE 0 END)=0
+SELECT s.name FROM salesperson s
+LEFT JOIN orders o USING (sales_id)
+LEFT JOIN company c USING (com_id)
+GROUP BY sales_id
+HAVING SUM(CASE c.name WHEN 'RED' THEN 1 ELSE 0 END)=0
 
