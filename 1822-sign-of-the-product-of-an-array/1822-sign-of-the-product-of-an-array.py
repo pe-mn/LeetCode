@@ -24,12 +24,12 @@ class Solution:
     
 # --------------------------------------------------------------
          
-        product = reduce(lambda x,y: x*y, nums)
-        return 0 if not product else 1 if product > 0 else -1
+        # product = reduce(lambda x,y: x*y, nums)
+        # return 0 if not product else 1 if product > 0 else -1
 
 # --------------------------------------------------------------
         
-         # return 0 if 0 in nums else -1 if sum(x < 0 for x in nums) % 2 else 1
+         return 0 if 0 in nums else -1 if sum(x < 0 for x in nums) % 2 else 1
         
 # --------------------------------------------------------------
         
