@@ -5,19 +5,19 @@
 # The right join ensures all salespersons are included (even those who do not have RED orders)
 # The WHERE IS NULL gives salespersons who did not have any RED orders due to the right join
 
-SELECT S.name
-FROM Orders O JOIN Company C ON (O.com_id = C.com_id AND C.name = 'RED')
-RIGHT JOIN SalesPerson S USING(sales_id)
-WHERE O.sales_id IS NULL
+# SELECT S.name
+# FROM Orders O JOIN Company C ON (O.com_id = C.com_id AND C.name = 'RED')
+# RIGHT JOIN SalesPerson S USING(sales_id)
+# WHERE O.sales_id IS NULL
 
 # --------------------------------------------------------------------------------
 
-# SELECT name FROM salesperson
-# WHERE sales_id NOT IN 
-# (
-#    SELECT sales_id FROM orders WHERE com_id IN 
-# 	(SELECT com_id FROM company WHERE name='RED')
-# )
+SELECT name FROM salesperson
+WHERE sales_id NOT IN 
+(
+   SELECT sales_id FROM orders WHERE com_id IN 
+	(SELECT com_id FROM company WHERE name='RED')
+)
 
 
 
