@@ -41,18 +41,70 @@ class Solution(object):
     
 # I think the code will be cleaner if the last for loop is changed to stack.extend(cur.children[::-1])
 
-        stack,s=[root],[]
-        while stack:
-            p=stack.pop()
-            if p:
-                s.append(p.val)
-                for i in range(len(p.children)-1,-1,-1): stack.append(p.children[i])
-        return s
+        # stack,s=[root],[]
+        # while stack:
+        #     p=stack.pop()
+        #     if p:
+        #         s.append(p.val)
+        #         for i in range(len(p.children)-1,-1,-1): stack.append(p.children[i])
+        # return s
     
 # - Since only the left side was used, it could be replaced by stack.
 # - Besides, space complexity of "node.children[::-1]" is the max length of all node.children. It could potentially be space-consuming, when some nodes have long .children.
 
 # -----------------------------------------------------------------------
-     
+
+# Python + iterative + recursive + explanation
+# -------------------------------------------
+       
+        """
+        :type root: Node
+        :rtype: List[int]
+        """
+        if root is None:
+            return []
         
+        stack = [root]
+        output = []
+        
+        # Till there is element in stack the loop runs.
+        while stack:           
+            #pop the last element from the stack and store it into temp.
+            temp = stack.pop()
+            
+            # append. the value of temp to output
+            output.append(temp.val)
+            
+            #add the children of the temp into the stack in reverse order.
+            # children of 1 = [3,2,4], if not reveresed then 4 will be popped out first from the stack.
+            # if reversed then stack = [4,2,3]. Here 3 will pop out first.
+            # This continues till the stack is empty.
+            stack.extend(temp.children[::-1])
+        
+        #return the output
+        return output
+    
+# --------------------------------------------------------------------------
+
+#         """
+#         :type root: Node
+#         :rtype: List[int]
+#         """      
+#         output =[]       
+#         # perform dfs on the root and get the output stack
+#         self.dfs(root, output)        
+#         # return the output of all the nodes.
+#         return output
+    
+#     def dfs(self, root, output):       
+#         # If root is none return 
+#         if root is None:
+#             return
+        
+#         # for preorder we first add the root val
+#         output.append(root.val)
+        
+#         # Then add all the children to the output
+#         for child in root.children:
+#             self.dfs(child, output)
         
