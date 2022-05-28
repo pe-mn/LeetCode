@@ -15,11 +15,11 @@ class Solution:
 
 # ----------------------------------------------------
 
-        seen = set()
-        while n not in seen:
-            seen.add(n)
-            n = sum(int(x) **2 for x in str(n))
-        return n == 1
+        # seen = set()
+        # while n not in seen:
+        #     seen.add(n)
+        #     n = sum(int(x) **2 for x in str(n))
+        # return n == 1
 
 # n = sum([int(x) **2 for x in str(n)]) will calculate the next number.
 
@@ -63,3 +63,24 @@ class Solution:
 
 # Therefore, as long as we can show that there is a loop after running the process continuously, the number is not a happy number.
 
+# ----------------------------------------------------
+
+# # Python 3 -> tortoise hare technique
+# -------------------------------------
+    	#20 -> 4 -> 16 -> 37 -> 58 -> 89 -> 145 > 42 -> 20
+        slow = self.squared(n)
+        fast = self.squared(self.squared(n))
+        
+        while slow!=fast and fast!=1:
+            slow = self.squared(slow)
+            fast = self.squared(self.squared(fast))
+
+        return fast==1
+
+    def squared(self, n):
+	    result = 0
+	    while n>0:
+		    last = n%10
+		    result += last * last
+		    n = n//10
+	    return result
