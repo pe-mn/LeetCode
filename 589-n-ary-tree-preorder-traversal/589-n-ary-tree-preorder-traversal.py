@@ -106,32 +106,32 @@ class Solution(object):
             
 # --------------------------------------------------------------------------
 
-# Recursive:
-#-----------
-        if not root:
-            return []
-        res = []
-        res.append(root.val)
-        for s in root.children:
-            res += self.preorder(s)
-        return res
+# Recursive: Fastest
+#--------------------
+        # if not root:
+        #     return []
+        # res = []
+        # res.append(root.val)
+        # for s in root.children:
+        #     res += self.preorder(s)
+        # return res
 
 # --------------------------------------------------------------------------
 
 # DFS Iterative:
 #---------------
 
-        # if not root:
-        #     return []
-        # res = []
-        # stack = [root]
-        # while stack:
-        #     u = stack.pop()
-        #     res.append(u.val)
-        #     if u.children:
-        #         for c in u.children[::-1]:
-        #             stack.append(c)
-        # return res
+        if not root:
+            return []
+        res = []
+        stack = [root]
+        while stack:
+            u = stack.pop()
+            res.append(u.val)
+            if u.children:
+                for c in u.children[::-1]:
+                    stack.append(c)
+        return res
     
 # --------------------------------------------------------------------------
 
