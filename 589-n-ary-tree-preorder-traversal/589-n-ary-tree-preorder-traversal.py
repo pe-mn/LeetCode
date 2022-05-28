@@ -85,26 +85,54 @@ class Solution(object):
 #         return output
     
 # --------------------------------------------------------------------------
-
-        """
-        :type root: Node
-        :rtype: List[int]
-        """      
-        output =[]       
-        # perform dfs on the root and get the output stack
-        self.dfs(root, output)        
-        # return the output of all the nodes.
-        return output
+     
+#         output =[]       
+#         # perform dfs on the root and get the output stack
+#         self.dfs(root, output)        
+#         # return the output of all the nodes.
+#         return output
     
-    def dfs(self, root, output):       
-        # If root is none return 
-        if root is None:
-            return
+#     def dfs(self, root, output):       
+#         # If root is none return 
+#         if root is None:
+#             return
         
-        # for preorder we first add the root val
-        output.append(root.val)
+#         # for preorder we first add the root val
+#         output.append(root.val)
         
-        # Then add all the children to the output
-        for child in root.children:
-            self.dfs(child, output)
+#         # Then add all the children to the output
+#         for child in root.children:
+#             self.dfs(child, output)
+            
+# --------------------------------------------------------------------------
+
+# Recursive:
+#-----------
+        if not root:
+            return []
+        res = []
+        res.append(root.val)
+        for s in root.children:
+            res += self.preorder(s)
+        return res
+
+# --------------------------------------------------------------------------
+
+# DFS Iterative:
+#---------------
+
+        # if not root:
+        #     return []
+        # res = []
+        # stack = [root]
+        # while stack:
+        #     u = stack.pop()
+        #     res.append(u.val)
+        #     if u.children:
+        #         for c in u.children[::-1]:
+        #             stack.append(c)
+        # return res
+    
+# --------------------------------------------------------------------------
+
         
