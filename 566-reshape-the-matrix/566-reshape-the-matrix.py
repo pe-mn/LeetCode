@@ -21,13 +21,22 @@ class Solution:
 # -------------------------------------------------------------------
 # Solution 1 - NumPy
 # -------------------
-        try:
-            return np.reshape(mat, (r, c)).tolist()
-        except:
-            return mat
+        # try:
+        #     return np.reshape(mat, (r, c)).tolist()
+        # except:
+        #     return mat
 # -------------------------------------------------------------------
+# Solution 2 - Oneliner
+# ---------------------
+        return mat if len(sum(mat, [])) != r * c else map(list, zip(*([iter(sum(mat, []))]*c)))
 
-# -------------------------------------------------------------------
+# A more readable version of that:
+# -------------------------------    
+    # flat = sum(mat, [])
+    # if len(flat) != r * c:
+    #     return mat
+    # tuples = zip(*([iter(flat)] * c))
+    # return map(list, tuples)
 
 # -------------------------------------------------------------------
 
