@@ -68,14 +68,14 @@ class Solution:
         # nums+=[0]*count        
         
 # ------------------------------------------------        
-        n = nums.count(0)
-        while(0 in nums):
-            nums.remove(0)
-        nums.extend([0]*n)  
-# ------------------------------------------------        
-        # for j in range(nums.count(0)):
+        # n = nums.count(0)
+        # while(0 in nums):
         #     nums.remove(0)
-        #     nums.append(0)    
+        # nums.extend([0]*n)  
+# ------------------------------------------------        
+        for j in range(nums.count(0)):
+            nums.remove(0)
+            nums.append(0)    
 # ------------------------------------------------                    
 
         # zero = 0  # records the position of "0"
