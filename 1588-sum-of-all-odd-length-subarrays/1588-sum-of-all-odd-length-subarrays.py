@@ -10,11 +10,11 @@ class Solution:
     #     return sum(sum(s) for s in subs)
     
     
-        res = 0
-        for n in range(1, len(arr)+1, 2):
-            for i in range(len(arr)+1-n):
-                res += sum(arr[i:i+n])
-        return res
+        # res = 0
+        # for n in range(1, len(arr)+1, 2):
+        #     for i in range(len(arr)+1-n):
+        #         res += sum(arr[i:i+n])
+        # return res
     
 # Solution 1: Brute Force
 # ------------------------
@@ -31,5 +31,5 @@ class Solution:
     
 # Python 1 line
 # --------------
-        # return sum(sum(arr[i:i + l]) for l in range(1, 100, 2) for i in range(len(arr) - l + 1))
+        return sum(sum(arr[i:i + l]) for l in range(1, len(arr)+1, 2) for i in range(len(arr) - l + 1))
             
