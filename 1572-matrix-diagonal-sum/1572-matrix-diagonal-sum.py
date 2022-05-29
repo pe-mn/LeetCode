@@ -9,11 +9,11 @@ class Solution:
     
 # ---------------------------------------------------------
 
-	    return sum(sum(r[j] for j in {i, len(r) - i - 1}) for i, r in enumerate(mat))
+	    # return sum(sum(r[j] for j in {i, len(r) - i - 1}) for i, r in enumerate(mat))
 
 # ---------------------------------------------------------
 
-        # return sum(v for i, r in enumerate(mat) for j, v in enumerate(r) if i+j == len(mat)-1 or i==j)
+        return sum(v for i, r in enumerate(mat) for j, v in enumerate(r) if i+j == len(mat)-1 or i==j)
 
 # ---------------------------------------------------------
 
