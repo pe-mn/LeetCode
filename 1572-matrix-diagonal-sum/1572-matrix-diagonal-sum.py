@@ -17,13 +17,13 @@ class Solution:
 
 # ---------------------------------------------------------
 
-        n = len(mat)
-        return sum(mat[i][i] + mat[i][n - i - 1] for i in range(n)) - (mat[n // 2][n // 2] if n % 2 == 1 else 0)
+        # n = len(mat)
+        # return sum(mat[i][i] + mat[i][n - i - 1] for i in range(n)) - (mat[n // 2][n // 2] if n % 2 == 1 else 0)
     
 # ---------------------------------------------------------
 
-        # n = len(mat)
-        # return sum(row[r] + row[n - 1 - r] for r, row in enumerate(mat)) - (0, mat[n // 2][n // 2])[n % 2]
+        n = len(mat)
+        return sum(row[r] + row[n - 1 - r] for r, row in enumerate(mat)) - (0, mat[n // 2][n // 2])[n % 2]
     
 # ---------------------------------------------------------
 
