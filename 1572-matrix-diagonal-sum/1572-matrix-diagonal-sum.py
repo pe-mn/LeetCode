@@ -1,15 +1,15 @@
 class Solution:
     def diagonalSum(self, mat: List[List[int]]) -> int:
-        sum = 0
-        for i, row in enumerate(mat):
-            for j, num in enumerate(row):
-                if j==i or j+i==len(mat)-1:
-                    sum+=num                   
-        return sum
+        # sum = 0
+        # for i, row in enumerate(mat):
+        #     for j, num in enumerate(row):
+        #         if j==i or j+i==len(mat)-1:
+        #             sum+=num                   
+        # return sum
     
 # ---------------------------------------------------------
 
-	    # return sum(sum(r[j] for j in {i, len(r) - i - 1}) for i, r in enumerate(mat))
+	    return sum(sum(r[j] for j in {i, len(r) - i - 1}) for i, r in enumerate(mat))
 
 # ---------------------------------------------------------
 
