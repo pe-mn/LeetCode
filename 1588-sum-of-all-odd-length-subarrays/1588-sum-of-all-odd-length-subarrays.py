@@ -35,12 +35,12 @@ class Solution:
 
 # -----------------------------------------------------------------------------------------------
 
-        res, n = 0, len(arr)
-        for i, a in enumerate(arr):
-            res += ((i + 1) * (n - i) + 1) // 2 * a
-        return res
+        # res, n = 0, len(arr)
+        # for i, a in enumerate(arr):
+        #     res += ((i + 1) * (n - i) + 1) // 2 * a
+        # return res
 
 # Python 1 line
 # --------------
-        # return sum(((i + 1) * (len(arr)-i) + 1) / 2 * a for i, a in enumerate(arr))
+        return sum(((i + 1) * (len(arr)-i) + 1) // 2 * a for i, a in enumerate(arr))
             
