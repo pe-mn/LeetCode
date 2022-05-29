@@ -32,15 +32,18 @@ class Solution:
 
 # A more readable version of that:
 # -------------------------------    
-        flat = sum(mat, [])
-        if len(flat) != r * c:
-            return mat
-        tuples = zip(*([iter(flat)] * c))
-        return map(list, tuples)
+        # flat = sum(mat, [])
+        # if len(flat) != r * c:
+        #     return mat
+        # tuples = zip(*([iter(flat)] * c))
+        # return map(list, tuples)
 
 # -------------------------------------------------------------------
 # Solution 3 - itertools
 # -----------------------
-
+        if r * c != len(mat) * len(mat[0]):
+            return mat
+        it = itertools.chain(*mat)
+        return [list(itertools.islice(it, c)) for _ in range(r)]
             
             
