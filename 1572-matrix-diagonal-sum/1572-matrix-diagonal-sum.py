@@ -22,13 +22,13 @@ class Solution:
     
 # ---------------------------------------------------------
 
-        n = len(mat)
-        return sum(row[r] + row[n - 1 - r] for r, row in enumerate(mat)) - (0, mat[n // 2][n // 2])[n % 2]
+        # n = len(mat)
+        # return sum(row[r] + row[n - 1 - r] for r, row in enumerate(mat)) - (0, mat[n // 2][n // 2])[n % 2]
     
 # ---------------------------------------------------------
 
-        # n = len(mat)
-        # return sum(row[c] for r, row in enumerate(mat) for c in {r, n - 1 - r})
+        n = len(mat)
+        return sum(row[c] for r, row in enumerate(mat) for c in {r, n - 1 - r})
     
 # ---------------------------------------------------------
  
