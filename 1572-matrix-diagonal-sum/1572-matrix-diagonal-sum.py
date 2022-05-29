@@ -64,35 +64,35 @@ class Solution:
 
 # ---------------------------------------------------------
     
-        n = len(mat)
-        ans = 0
+#         n = len(mat)
+#         ans = 0
         
-        # Sum over each corner
-        for i in range(n // 2):
-            ans += mat[i][i] + mat[i][~i] + mat[~i][i] + mat[~i][~i]
+#         # Sum over each corner
+#         for i in range(n // 2):
+#             ans += mat[i][i] + mat[i][~i] + mat[~i][i] + mat[~i][~i]
             
-        # If the length is odd, add the middle element
-        if (n % 2) == 1:
-            i = n // 2 
-            ans += mat[i][i]
-        return ans
+#         # If the length is odd, add the middle element
+#         if (n % 2) == 1:
+#             i = n // 2 
+#             ans += mat[i][i]
+#         return ans
     
 # ---------------------------------------------------------
     
-#         n = len(mat)     
-#         mid = n // 2        
-#         summation = 0
+        n = len(mat)     
+        mid = n // 2        
+        summation = 0
         
-#         for i in range(n):            
-#             # primary diagonal
-#             summation += mat[i][i]            
-#             # secondary diagonal
-#             summation += mat[n-1-i][i]
+        for i in range(n):            
+            # primary diagonal
+            summation += mat[i][i]            
+            # secondary diagonal
+            summation += mat[n-1-i][i]
                         
-#         if n % 2 == 1:
-#             # remove center element (repeated) on odd side-length case
-#             summation -= mat[mid][mid]
+        if n % 2 == 1:
+            # remove center element (repeated) on odd side-length case
+            summation -= mat[mid][mid]
                         
-#         return summation
+        return summation
     
     
