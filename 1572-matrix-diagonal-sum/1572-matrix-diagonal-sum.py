@@ -13,12 +13,12 @@ class Solution:
 
 # ---------------------------------------------------------
 
-        return sum(v for i, r in enumerate(mat) for j, v in enumerate(r) if i+j == len(mat)-1 or i==j)
+        # return sum(v for i, r in enumerate(mat) for j, v in enumerate(r) if i+j == len(mat)-1 or i==j)
 
 # ---------------------------------------------------------
 
-        # n = len(mat)
-        # return sum(mat[i][i] + mat[i][n - i - 1] for i in range(n)) - (mat[n // 2][n // 2] if n % 2 == 1 else 0)
+        n = len(mat)
+        return sum(mat[i][i] + mat[i][n - i - 1] for i in range(n)) - (mat[n // 2][n // 2] if n % 2 == 1 else 0)
     
 # ---------------------------------------------------------
 
