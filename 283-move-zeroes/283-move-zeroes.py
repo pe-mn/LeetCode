@@ -25,9 +25,7 @@ class Solution:
         
 # maybe we don't need nums[slow] == 0.
 # slow will jump to next value by if nums[slow] != 0 after swap.        
-        
-        
-         
+                       
 # -------------------------------------------------------------         
         
 # Wrong Answer, Since we modify nums while using it in the loop
@@ -42,10 +40,10 @@ class Solution:
 #----------------
 # its because if we start traversing the list from the last index, deleting/popping out the zeros wont affect the indexes of the elements in the list that we havent checked yet. Hope that makes some sense.
 # ------------------------------------------------------------- 
-        for i in range(len(nums))[::-1]:
-            if nums[i] == 0:
-                nums.pop(i)
-                nums.append(0)
+        # for i in range(len(nums))[::-1]:
+        #     if nums[i] == 0:
+        #         nums.pop(i)
+        #         nums.append(0)
 # ------------------------------------------------                          
         
 # Wrong Answer, Since we modify nums while using it in the loop
@@ -62,6 +60,13 @@ class Solution:
         # no_zero = [i for i in nums if i!= 0]
         # zeros = [0] * n    
         # nums = no_zero + zeros
+
+# Correct Answer        
+# ---------------                   
+        count=nums.count(0)
+        nums[:]=[i for i in nums if i != 0]
+        nums+=[0]*count        
+        
 # ------------------------------------------------        
         # n = nums.count(0)
         # while(0 in nums):
@@ -71,10 +76,6 @@ class Solution:
         # for j in range(nums.count(0)):
         #     nums.remove(0)
         #     nums.append(0)    
-# ------------------------------------------------                    
-        # count=nums.count(0)
-        # nums[:]=[i for i in nums if i != 0]
-        # nums+=[0]*count
 # ------------------------------------------------                    
 
         # zero = 0  # records the position of "0"
