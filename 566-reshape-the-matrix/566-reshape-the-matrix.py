@@ -1,17 +1,17 @@
-import numpy as np
+# import numpy as np
 
 class Solution:
     def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
-# 		# Creat a flat matrix
-#         flat_mat = [num for sublist in mat for num in sublist]    
-#         n = len(flat_mat)
+		# Creat a flat matrix
+        flat_mat = [num for sublist in mat for num in sublist]    
+        n = len(flat_mat)
 		
-# 		# Check if reshape is invalid
-#         if n%r:
-#             return mat
+		# Check if reshape is invalid
+        if n%r:
+            return mat
         
-#         k = n//r     # k is the number of elements per row 
-#         return [ flat_mat[(i*k) : (i*k)+k] for i in range(r)]
+        k = n//r     # k is the number of elements per row 
+        return [ flat_mat[(i*k) : (i*k)+k] for i in range(r)]
     
 # -------------------------------------------------------------------
 #         flat_mat = []
@@ -41,9 +41,9 @@ class Solution:
 # -------------------------------------------------------------------
 # Solution 3 - itertools
 # -----------------------
-        if r * c != len(mat) * len(mat[0]):
-            return mat
-        it = itertools.chain(*mat)
-        return [list(itertools.islice(it, c)) for _ in range(r)]
+        # if r * c != len(mat) * len(mat[0]):
+        #     return mat
+        # it = itertools.chain(*mat)
+        # return [list(itertools.islice(it, c)) for _ in range(r)]
             
             
