@@ -39,28 +39,28 @@ class Solution:
     
 # ---------------------------------------------------------
     
-        n = len(mat)
-        row, primary_col, secondary_col = 0, 0, n-1
-        sum = 0
-        while row < n:
-            sum += mat[row][primary_col]
-            if secondary_col != primary_col:
-                sum += mat[row][secondary_col]
-            row += 1
-            primary_col += 1
-            secondary_col -= 1
-        return sum
+        # n = len(mat)
+        # row, primary_col, secondary_col = 0, 0, n-1
+        # sum = 0
+        # while row < n:
+        #     sum += mat[row][primary_col]
+        #     if secondary_col != primary_col:
+        #         sum += mat[row][secondary_col]
+        #     row += 1
+        #     primary_col += 1
+        #     secondary_col -= 1
+        # return sum
 
 # ---------------------------------------------------------
 
 # I turned the entries I visited to zero to prevent double summation.
-        # n = len(mat)
-        # s = 0
-        # for i in range(n):
-        #     s+= mat[i][i]
-        #     mat[i][i] = 0
-        #     s+= mat[-i-1][i]
-        # return s
+        n = len(mat)
+        s = 0
+        for i in range(n):
+            s+= mat[i][i]
+            mat[i][i] = 0
+            s+= mat[-i-1][i]
+        return s
 
 # ---------------------------------------------------------
     
