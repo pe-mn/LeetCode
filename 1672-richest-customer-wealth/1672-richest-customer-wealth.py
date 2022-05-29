@@ -11,7 +11,7 @@ class Solution:
 
 # -----------------------------------------------------------------
 
-        # return max(map(sum, accounts))
+        return max(map(sum, accounts))
 
 # -----------------------------------------------------------------
     
@@ -23,9 +23,9 @@ class Solution:
 # For every person, add his wealth from all the banks ie. for every row, sum all the column values and store in totalWealth.
 # If totalWealth is more than maxWealth, then update maxWealth.
 
-	    maxWealth = 0
-	    for i in range(len(accounts)):
-	        totalWealth = sum(accounts[i])
-	        maxWealth = max(maxWealth, totalWealth)
-	    return maxWealth
+	    # maxWealth = 0
+	    # for i in range(len(accounts)):
+	    #     totalWealth = sum(accounts[i])
+	    #     maxWealth = max(maxWealth, totalWealth)
+	    # return maxWealth
         
