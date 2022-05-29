@@ -32,24 +32,24 @@ class Solution:
     
 # ---------------------------------------------------------
  
-        row,total = len(mat),0
-        for i in range(row):
-            total+=mat[i][i]+mat[i][row-i-1]
-        return total-mat[row//2][row//2] if row%2!=0 else total
+        # row,total = len(mat),0
+        # for i in range(row):
+        #     total+=mat[i][i]+mat[i][row-i-1]
+        # return total-mat[row//2][row//2] if row%2!=0 else total
     
 # ---------------------------------------------------------
     
-        # n = len(mat)
-        # row, primary_col, secondary_col = 0, 0, n-1
-        # sum = 0
-        # while row < n:
-        #     sum += mat[row][primary_col]
-        #     if secondary_col != primary_col:
-        #         sum += mat[row][secondary_col]
-        #     row += 1
-        #     primary_col += 1
-        #     secondary_col -= 1
-        # return sum
+        n = len(mat)
+        row, primary_col, secondary_col = 0, 0, n-1
+        sum = 0
+        while row < n:
+            sum += mat[row][primary_col]
+            if secondary_col != primary_col:
+                sum += mat[row][secondary_col]
+            row += 1
+            primary_col += 1
+            secondary_col -= 1
+        return sum
 
 # ---------------------------------------------------------
 
