@@ -73,16 +73,16 @@ class Solution:
         #     nums.remove(0)
         # nums.extend([0]*n)  
 # ------------------------------------------------        
-        for j in range(nums.count(0)):
-            nums.remove(0)
-            nums.append(0)    
+        # for j in range(nums.count(0)):
+        #     nums.remove(0)
+        #     nums.append(0)    
 # ------------------------------------------------                    
 
-        # zero = 0  # records the position of "0"
-        # for i in range(len(nums)):
-        #     if nums[i] != 0:
-        #         nums[i], nums[zero] = nums[zero], nums[i]
-        #         zero += 1
+        zero = 0  # records the position of "0"
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[i], nums[zero] = nums[zero], nums[i]
+                zero += 1
 
         
                 
