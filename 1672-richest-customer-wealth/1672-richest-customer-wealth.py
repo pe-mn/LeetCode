@@ -1,3 +1,5 @@
+import numpy as np 
+
 class Solution:
     def maximumWealth(self, accounts: List[List[int]]) -> int:
         # wealth = [sum(l) for l in accounts]
@@ -9,11 +11,11 @@ class Solution:
 
 # -----------------------------------------------------------------
 
-        return max(map(sum, accounts))
+        # return max(map(sum, accounts))
 
 # -----------------------------------------------------------------
     
-         # return max(np.sum(accounts,axis=1))
+         return max(np.sum(accounts,axis=1))
 
 # -----------------------------------------------------------------
 
