@@ -63,15 +63,15 @@ class Solution:
 
 # Correct Answer        
 # ---------------                   
-        count=nums.count(0)
-        nums[:]=[i for i in nums if i != 0]
-        nums+=[0]*count        
+        # count=nums.count(0)
+        # nums[:]=[i for i in nums if i != 0]
+        # nums+=[0]*count        
         
 # ------------------------------------------------        
-        # n = nums.count(0)
-        # while(0 in nums):
-        #     nums.remove(0)
-        # nums.extend([0]*n)  
+        n = nums.count(0)
+        while(0 in nums):
+            nums.remove(0)
+        nums.extend([0]*n)  
 # ------------------------------------------------        
         # for j in range(nums.count(0)):
         #     nums.remove(0)
