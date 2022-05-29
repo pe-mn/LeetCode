@@ -27,15 +27,15 @@ class Solution:
     
 # ---------------------------------------------------------
 
-        n = len(mat)
-        return sum(row[c] for r, row in enumerate(mat) for c in {r, n - 1 - r})
+        # n = len(mat)
+        # return sum(row[c] for r, row in enumerate(mat) for c in {r, n - 1 - r})
     
 # ---------------------------------------------------------
  
-        # row,total = len(mat),0
-        # for i in range(row):
-        #     total+=mat[i][i]+mat[i][row-i-1]
-        # return total-mat[row//2][row//2] if row%2!=0 else total
+        row,total = len(mat),0
+        for i in range(row):
+            total+=mat[i][i]+mat[i][row-i-1]
+        return total-mat[row//2][row//2] if row%2!=0 else total
     
 # ---------------------------------------------------------
     
