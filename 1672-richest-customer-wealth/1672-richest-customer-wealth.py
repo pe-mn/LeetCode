@@ -1,11 +1,11 @@
 class Solution:
     def maximumWealth(self, accounts: List[List[int]]) -> int:
-        wealth = [sum(l) for l in accounts]
-        return max(wealth)
+        # wealth = [sum(l) for l in accounts]
+        # return max(wealth)
     
  # -----------------------------------------------------------------
    
-        # return max(sum(acc) for acc in accounts)
+        return max(sum(acc) for acc in accounts)
 
 # -----------------------------------------------------------------
 
