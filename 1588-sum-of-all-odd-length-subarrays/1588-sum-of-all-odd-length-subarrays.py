@@ -31,5 +31,16 @@ class Solution:
     
 # Python 1 line
 # --------------
-        return sum(sum(arr[i:i + l]) for l in range(1, len(arr)+1, 2) for i in range(len(arr) - l + 1))
+        # return sum(sum(arr[i:i + l]) for l in range(1, len(arr)+1, 2) for i in range(len(arr)-l+1))
+
+# -----------------------------------------------------------------------------------------------
+
+        res, n = 0, len(arr)
+        for i, a in enumerate(arr):
+            res += ((i + 1) * (n - i) + 1) // 2 * a
+        return res
+
+# Python 1 line
+# --------------
+        # return sum(((i + 1) * (len(arr)-i) + 1) / 2 * a for i, a in enumerate(arr))
             
