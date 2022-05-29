@@ -5,11 +5,11 @@ class Solution:
     
  # -----------------------------------------------------------------
    
-        return max(sum(acc) for acc in accounts)
+        # return max(sum(acc) for acc in accounts)
 
 # -----------------------------------------------------------------
 
-        # return max(map(sum, accounts))
+        return max(map(sum, accounts))
 
 # -----------------------------------------------------------------
     
