@@ -8,12 +8,8 @@ class Solution:
         if n%r:
             return mat
         
-        k = n//r
-        reshaped = []
-        for i in range(r):
-            reshaped.append(flat_mat[(i*k) : (i*k)+k])
-            
-        return reshaped
+        k = n//r         
+        return [ flat_mat[(i*k) : (i*k)+k] for i in range(r)]
     
 # -------------------------------------------------------------------
 #         flat_mat = []
