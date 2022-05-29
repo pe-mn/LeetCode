@@ -54,28 +54,28 @@ class Solution:
 # ---------------------------------------------------------
 
 # I turned the entries I visited to zero to prevent double summation.
-        n = len(mat)
-        s = 0
-        for i in range(n):
-            s+= mat[i][i]
-            mat[i][i] = 0
-            s+= mat[-i-1][i]
-        return s
+        # n = len(mat)
+        # s = 0
+        # for i in range(n):
+        #     s+= mat[i][i]
+        #     mat[i][i] = 0
+        #     s+= mat[-i-1][i]
+        # return s
 
 # ---------------------------------------------------------
     
-#         n = len(mat)
-#         ans = 0
+        n = len(mat)
+        ans = 0
         
-#         # Sum over each corner
-#         for i in range(n // 2):
-#             ans += mat[i][i] + mat[i][~i] + mat[~i][i] + mat[~i][~i]
+        # Sum over each corner
+        for i in range(n // 2):
+            ans += mat[i][i] + mat[i][~i] + mat[~i][i] + mat[~i][~i]
             
-#         # If the length is odd, add the middle element
-#         if (n % 2) == 1:
-#             i = n // 2 
-#             ans += mat[i][i]
-#         return ans
+        # If the length is odd, add the middle element
+        if (n % 2) == 1:
+            i = n // 2 
+            ans += mat[i][i]
+        return ans
     
 # ---------------------------------------------------------
     
