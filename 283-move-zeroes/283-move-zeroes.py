@@ -9,15 +9,15 @@ class Solution:
         """
 # Two pointers technique (Python, O(n) time / O(1) space)
 # -------------------------------------------------------     
-        slow = 0
-        for fast in range(len(nums)):
-            if nums[fast] != 0:
-                nums[slow], nums[fast] = nums[fast], nums[slow]
+#         slow = 0
+#         for fast in range(len(nums)):
+#             if nums[fast] != 0:
+#                 nums[slow], nums[fast] = nums[fast], nums[slow]
 
-            # wait while we find a non-zero element to
-            # swap with you
-            if nums[slow] != 0:
-                slow += 1      
+#             # wait while we find a non-zero element to
+#             # swap with you
+#             if nums[slow] != 0:
+#                 slow += 1      
 
 # Algorithm complexity:
 # Time complexity: O(n). Our fast pointer does not visit the same spot twice.
@@ -42,10 +42,10 @@ class Solution:
 #----------------
 # its because if we start traversing the list from the last index, deleting/popping out the zeros wont affect the indexes of the elements in the list that we havent checked yet. Hope that makes some sense.
 # ------------------------------------------------------------- 
-        # for i in range(len(nums))[::-1]:
-        #     if nums[i] == 0:
-        #         nums.pop(i)
-        #         nums.append(0)
+        for i in range(len(nums))[::-1]:
+            if nums[i] == 0:
+                nums.pop(i)
+                nums.append(0)
 # ------------------------------------------------                          
         
 # Wrong Answer, Since we modify nums while using it in the loop
@@ -75,7 +75,6 @@ class Solution:
         # count=nums.count(0)
         # nums[:]=[i for i in nums if i != 0]
         # nums+=[0]*count
-
 # ------------------------------------------------                    
 
         # zero = 0  # records the position of "0"
