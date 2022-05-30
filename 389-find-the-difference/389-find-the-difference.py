@@ -30,19 +30,19 @@ class Solution:
 # ---------------------------------------------------------------                
 # Difference
 # -----------
-        diff = 0
-        for i in range(len(s)):
-            diff -= ord(s[i])
-            diff += ord(t[i])
-        diff += ord(t[-1])
-        return chr(diff)
+        # diff = 0
+        # for i in range(len(s)):
+        #     diff -= ord(s[i])
+        #     diff += ord(t[i])
+        # diff += ord(t[-1])
+        # return chr(diff)
 # ---------------------------------------------------------------                
 # XOR
 # -----------
-    #     code = 0
-    #     for ch in s + t:
-    #         code ^= ord(ch)
-    #     return chr(code)
+        code = 0
+        for ch in s + t:
+            code ^= ord(ch)
+        return chr(code)
 # ---------------------------------------------------------------                
         
 # Wrong Answer: "a", "aa"
