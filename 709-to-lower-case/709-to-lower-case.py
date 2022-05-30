@@ -5,9 +5,9 @@ class Solution:
     def toLowerCase(self, s: str) -> str:
         # return s.lower()  
 # -----------------------------------------------------------------
-        return "".join(chr(ord(c) + 32) if 65 <= ord(c) <= 90 else c for c in s)
+        # return "".join(chr(ord(c) + 32) if 65 <= ord(c) <= 90 else c for c in s)
 # -----------------------------------------------------------------    
-        # return "".join(chr(ord(c) + 32) if "A" <= c <= "Z" else c for c in s)
+        return "".join(chr(ord(c) + 32) if "A" <= c <= "Z" else c for c in s)
 # -----------------------------------------------------------------
 
 # The ASCII codes for A-Z is 65-90 and those for a-z is that range plus 32.
