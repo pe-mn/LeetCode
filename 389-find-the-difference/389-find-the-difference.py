@@ -16,29 +16,29 @@ class Solution:
             
 # ---------------------------------------------------------------   
         # return chr(reduce(lambda x,y: x ^ y, map(ord,s+t)))
+# --------------------------------------------------------------- 
+# Dictionary
+# -----------
+        # dic = {}
+        # for ch in s:
+        #     dic[ch] = dic.get(ch, 0) + 1
+        # for ch in t:
+        #     if dic.get(ch, 0) == 0:
+        #         return ch
+        #     else:
+        #         dic[ch] -= 1
 # ---------------------------------------------------------------                
-        dic = {}
-        for ch in s:
-            dic[ch] = dic.get(ch, 0) + 1
-        for ch in t:
-            if dic.get(ch, 0) == 0:
-                return ch
-            else:
-                dic[ch] -= 1
+# Difference
+# -----------
+        diff = 0
+        for i in range(len(s)):
+            diff -= ord(s[i])
+            diff += ord(t[i])
+        diff += ord(t[-1])
+        return chr(diff)
 # ---------------------------------------------------------------                
-    """
-    difference
-    """
-        # diff = 0
-        # for i in range(len(s)):
-        #     diff -= ord(s[i])
-        #     diff += ord(t[i])
-        # diff += ord(t[-1])
-        # return chr(diff)
-# ---------------------------------------------------------------                
-    """
-    xor
-    """
+# XOR
+# -----------
     #     code = 0
     #     for ch in s + t:
     #         code ^= ord(ch)
