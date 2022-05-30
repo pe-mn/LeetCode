@@ -15,16 +15,16 @@ class Solution:
         # return chr(c) #chr = convert ASCII into character
             
 # ---------------------------------------------------------------   
-        return chr(reduce(lambda x,y: x ^ y, map(ord,s+t)))
+        # return chr(reduce(lambda x,y: x ^ y, map(ord,s+t)))
 # ---------------------------------------------------------------                
-        # dic = {}
-        # for ch in s:
-        #     dic[ch] = dic.get(ch, 0) + 1
-        # for ch in t:
-        #     if dic.get(ch, 0) == 0:
-        #         return ch
-        #     else:
-        #         dic[ch] -= 1
+        dic = {}
+        for ch in s:
+            dic[ch] = dic.get(ch, 0) + 1
+        for ch in t:
+            if dic.get(ch, 0) == 0:
+                return ch
+            else:
+                dic[ch] -= 1
 # ---------------------------------------------------------------                
     """
     difference
