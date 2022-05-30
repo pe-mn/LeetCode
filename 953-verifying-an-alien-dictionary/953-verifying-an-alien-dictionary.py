@@ -25,9 +25,9 @@ class Solution:
 # Time O(NS)
 # Space O(1)
 
-        m = {c: i for i, c in enumerate(order)}
-        words = [[m[c] for c in w] for w in words]
-        return all(w1 <= w2 for w1, w2 in zip(words, words[1:]))
+        # m = {c: i for i, c in enumerate(order)}
+        # words = [[m[c] for c in w] for w in words]
+        # return all(w1 <= w2 for w1, w2 in zip(words, words[1:]))
 
 # Minor bug in the python code: the < in this line should be <=
 # return all(w1 < w2 for w1, w2 in zip(words, words[1:]))
@@ -41,16 +41,16 @@ class Solution:
 # ---------------------------------------------------------------------------
 # https://leetcode.com/problems/verifying-an-alien-dictionary/discuss/203175/Python-straightforward-solution
 
-        # ind = {c: i for i, c in enumerate(order)}
-        # for a, b in zip(words, words[1:]):
-        #     if len(a) > len(b) and a[:len(b)] == b:
-        #         return False
-        #     for s1, s2 in zip(a, b):
-        #         if ind[s1] < ind[s2]:
-        #             break
-        #         elif ind[s1] > ind[s2]:
-        #             return False
-        # return True
+        ind = {c: i for i, c in enumerate(order)}
+        for a, b in zip(words, words[1:]):
+            if len(a) > len(b) and a[:len(b)] == b:
+                return False
+            for s1, s2 in zip(a, b):
+                if ind[s1] < ind[s2]:
+                    break
+                elif ind[s1] > ind[s2]:
+                    return False
+        return True
     
 # ---------------------------------------------------------------------------
 # https://leetcode.com/problems/verifying-an-alien-dictionary/discuss/361525/Python-Solution-with-Detailed-Explaination-for-Beginner
