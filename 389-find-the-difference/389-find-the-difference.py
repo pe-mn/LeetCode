@@ -16,6 +16,8 @@ class Solution:
             
 # ---------------------------------------------------------------   
         return chr(reduce(lambda x,y: x ^ y, map(ord,s+t)))
+
+# ord() function returns the Unicode code from a given character. This function accepts a string of unit length as an argument and returns the Unicode equivalence of the passed argument.
 # --------------------------------------------------------------- 
 # Dictionary
 # -----------
