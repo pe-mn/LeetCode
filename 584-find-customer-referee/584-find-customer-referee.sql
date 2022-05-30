@@ -7,10 +7,12 @@ Evaluates both SQL expressions and returns 1 if they are not equal and 0 if they
 # WHERE referee_id != 2
 # OR referee_id is null
 
+# Faster
 SELECT name FROM Customer
 WHERE referee_id <> 2
 OR referee_id is null
 
+# Slower
 # SELECT name from Customer
 # WHERE id not in (
 #     SELECT id FROM Customer 
