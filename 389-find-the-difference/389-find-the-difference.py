@@ -9,13 +9,13 @@ class Solution:
     
 # ---------------------------------------------------------------                
     
-        c = 0
-        for cs in s: c ^= ord(cs) #ord is ASCII value
-        for ct in t: c ^= ord(ct)
-        return chr(c) #chr = convert ASCII into character
+        # c = 0
+        # for cs in s: c ^= ord(cs) #ord is ASCII value
+        # for ct in t: c ^= ord(ct)
+        # return chr(c) #chr = convert ASCII into character
             
 # ---------------------------------------------------------------   
-        # return chr(reduce(lambda x,y: x ^ y, map(ord,s+t)))
+        return chr(reduce(lambda x,y: x ^ y, map(ord,s+t)))
 # ---------------------------------------------------------------                
         # dic = {}
         # for ch in s:
