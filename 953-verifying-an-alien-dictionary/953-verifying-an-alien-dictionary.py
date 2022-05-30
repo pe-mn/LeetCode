@@ -1,8 +1,6 @@
 class Solution:
     def isAlienSorted(self, words: List[str], order: str) -> bool:
-        # if sorted(words, key=lambda word: [order.index(c) for c in word]) == words:
-        #     return True                
-        # return False
+        # return sorted(words, key=lambda word: [order.index(c) for c in word]) == words
     
 # Instead of using index() which requires finding the index of a char, a better alternative consists in building a hash map to be used in the sorting, in order to retrieve the index directly.
 
@@ -27,9 +25,9 @@ class Solution:
 # Time O(NS)
 # Space O(1)
 
-        # m = {c: i for i, c in enumerate(order)}
-        # words = [[m[c] for c in w] for w in words]
-        # return all(w1 <= w2 for w1, w2 in zip(words, words[1:]))
+        m = {c: i for i, c in enumerate(order)}
+        words = [[m[c] for c in w] for w in words]
+        return all(w1 <= w2 for w1, w2 in zip(words, words[1:]))
 
 # Minor bug in the python code: the < in this line should be <=
 # return all(w1 < w2 for w1, w2 in zip(words, words[1:]))
@@ -38,7 +36,7 @@ class Solution:
 # Python 1-line
 # Slow, just for fun   
 # -------------------
-        return words == sorted(words, key=lambda w: list(map(order.index, w)))
+        # return words == sorted(words, key=lambda w: list(map(order.index, w)))
 
 # ---------------------------------------------------------------------------
 # https://leetcode.com/problems/verifying-an-alien-dictionary/discuss/203175/Python-straightforward-solution
