@@ -15,7 +15,7 @@ class Solution:
         # return chr(c) #chr = convert ASCII into character
             
 # ---------------------------------------------------------------   
-        # return chr(reduce(lambda x,y: x ^ y, map(ord,s+t)))
+        return chr(reduce(lambda x,y: x ^ y, map(ord,s+t)))
 # --------------------------------------------------------------- 
 # Dictionary
 # -----------
@@ -39,10 +39,10 @@ class Solution:
 # ---------------------------------------------------------------                
 # XOR
 # -----------
-        code = 0
-        for ch in s + t:
-            code ^= ord(ch)
-        return chr(code)
+        # code = 0
+        # for ch in s + t:
+        #     code ^= ord(ch)
+        # return chr(code)
 # ---------------------------------------------------------------                
         
 # Wrong Answer: "a", "aa"
