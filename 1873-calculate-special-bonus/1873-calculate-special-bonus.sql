@@ -3,8 +3,8 @@
 SELECT employee_id, 
 # IF(condition, value_if_true, value_if_false)
 IF(employee_id%2=1 and name not like 'M%',salary,0) 
-AS bonus FROM employees;
-
+AS bonus FROM employees
+# ORDER BY employee_id; ALREADY ORDERED
 
 # SELECT employee_id,
 # CASE
@@ -12,4 +12,5 @@ AS bonus FROM employees;
 #     THEN salary
 #     ELSE 0
 # END AS bonus
-# FROM Employees;
+# FROM Employees
+# ORDER BY employee_id;
