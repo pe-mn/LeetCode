@@ -6,15 +6,20 @@ class Solution:
         # for comb in foo(s):
         #     if ''.join(comb) not in s: 
         #         return False
+        # return True       
+# --------------------------------------------------------------- 
+# Wrong Answer 
+# Input "1", 1
+# Output true, Expected false
+# ---------------------------
+        # for comb in itertools.product(set(s), repeat=k):   
+        #     if ''.join(comb) not in s: 
+        #         return False
         # return True
-        
-        
-#         for comb in itertools.product(set(s), repeat=k):   
-#             if ''.join(comb) not in s: 
-#                 return False
-#         return True
 # ---------------------------------------------------------------
-        return len({s[i - k : i] for i in range(k, len(s) + 1)}) == 1 << k
+        return len({s[i:i+k] for i in range(len(s)-k+1)}) == 2 ** k  
+# ---------------------------------------------------------------
+        # return len({s[i - k : i] for i in range(k, len(s) + 1)}) == 1 << k
 # ---------------------------------------------------------------
 # https://leetcode.com/problems/check-if-a-string-contains-all-binary-codes-of-size-k/discuss/660829/Python-1-line-Follow-Up
 
