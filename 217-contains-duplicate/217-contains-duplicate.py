@@ -17,23 +17,23 @@ class Solution:
 # Time Complexity: O(n Log n)
 # Space Complexity: O(1)
 
-        nums.sort()
-        for i in range(1,len(nums)):
-            if nums[i] == nums[i-1]:
-                return True
-        return False      
+        # nums.sort()
+        # for i in range(1,len(nums)):
+        #     if nums[i] == nums[i-1]:
+        #         return True
+        # return False      
         
 # use hash Table
 # Time Complexity: O(n)
 # Space Complexity: O(n)        
         
-        # hashTable = {}
-        # for i in range(len(nums)):
-        #     if nums[i] not in hashTable:
-        #         hashTable[nums[i]] = 1
-        #     else:
-        #         return True
-        # return False
+        hashTable = {}
+        for i in range(len(nums)):
+            if nums[i] not in hashTable:
+                hashTable[nums[i]] = 1
+            else:
+                return True
+        return False
 # ----------------------------------------------------------------- 
 
 # ----------------------------------------------------------------- 
