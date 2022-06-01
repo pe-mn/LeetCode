@@ -14,25 +14,25 @@ class Solution:
 
 # ✔️ Solution - I (Recursive DFS)
 # -------------------------------
-        def dfs(root, isLeft):
-            if not root: return 0
-            if not root.left and not root.right:
-                return root.val if isLeft else 0
-            return dfs(root.left, True) + dfs(root.right, False)
-        return dfs(root, False)
+        # def dfs(root, isLeft):
+        #     if not root: return 0
+        #     if not root.left and not root.right:
+        #         return root.val if isLeft else 0
+        #     return dfs(root.left, True) + dfs(root.right, False)
+        # return dfs(root, False)
     
 # ✔️ Solution - II (Iterative DFS)
 # -------------------------------
-        # s, ans = deque([(root, False)]), 0
-        # while s:
-        #     cur, isLeft = s.pop()
-        #     if not cur.left and not cur.right and isLeft:
-        #         ans = ans + cur.val
-        #     if cur.right: 
-        #         s.append((cur.right, False))
-        #     if cur.left: 
-        #         s.append((cur.left, True))
-        # return ans
+        s, ans = deque([(root, False)]), 0
+        while s:
+            cur, isLeft = s.pop()
+            if not cur.left and not cur.right and isLeft:
+                ans = ans + cur.val
+            if cur.right: 
+                s.append((cur.right, False))
+            if cur.left: 
+                s.append((cur.left, True))
+        return ans
 
 # ✔️ Solution - III (BFS)
 # -------------------------------
