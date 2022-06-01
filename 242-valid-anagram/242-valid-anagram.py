@@ -36,26 +36,26 @@ class Solution:
 #         return dic1 == dic2
 
 # instead of writing two for loops for s and t each, we can write in a single loop.        
-        if len(s) != len(t) : 
-            return False
-        dict1 = [0]*26 
-        dict2 = [0] * 26
-        for i in range(len(s)) : 
-            dict1[ord(s[i])-ord('a')] += 1
-            dict2[ord(t[i]) - ord('a')] += 1
-        return dict1 == dict2 
+        # if len(s) != len(t) : 
+        #     return False
+        # dict1 = [0]*26 
+        # dict2 = [0] * 26
+        # for i in range(len(s)) : 
+        #     dict1[ord(s[i])-ord('a')] += 1
+        #     dict2[ord(t[i]) - ord('a')] += 1
+        # return dict1 == dict2 
         
 # instead of creating a second dictionary, we can try to "delete" from the first dictionary to save space.
-#         if len(s) == len(t):
-#             chars = defaultdict(int)
-#             for l in s:
-#                 chars[l] += 1
+        if len(s) == len(t):
+            chars = defaultdict(int)
+            for l in s:
+                chars[l] += 1
             
-#             for l in t:
-#                 chars[l] -= 1
+            for l in t:
+                chars[l] -= 1
             
-#             return all(v == 0 for v in chars.values())
-#         return False
+            return all(v == 0 for v in chars.values())
+        return False
 # ---------------------------------------------------------------------
 
 #         dic = {}
