@@ -26,14 +26,27 @@ class Solution:
 # use hash Table
 # Time Complexity: O(n)
 # Space Complexity: O(n)        
-        
+ 
         hashTable = {}
         for i in range(len(nums)):
             if nums[i] not in hashTable:
                 hashTable[nums[i]] = 1
             else:
+                hashTable[nums[i]] += 1
+        
+        for i in range(len(nums)):
+            if hashTable[nums[i]] >= 2:
                 return True
         return False
+    
+    
+        # hashTable = {}
+        # for i in range(len(nums)):
+        #     if nums[i] not in hashTable:
+        #         hashTable[nums[i]] = 1
+        #     else:
+        #         return True
+        # return False
 # ----------------------------------------------------------------- 
 
 # ----------------------------------------------------------------- 
@@ -54,9 +67,9 @@ class Solution:
 
 # Time Limit Exceeded
 # --------------------
-        for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
-                if nums[i] == nums[j]:
-                    return True
-        return False
+        # for i in range(len(nums)):
+        #     for j in range(i+1, len(nums)):
+        #         if nums[i] == nums[j]:
+        #             return True
+        # return False
         
