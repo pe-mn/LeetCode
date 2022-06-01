@@ -23,29 +23,29 @@ class Solution:
     
 # ✔️ Solution - II (Iterative DFS)
 # -------------------------------
-        s, ans = deque([(root, False)]), 0
-        while s:
-            cur, isLeft = s.pop()
-            if not cur.left and not cur.right and isLeft:
-                ans = ans + cur.val
-            if cur.right: 
-                s.append((cur.right, False))
-            if cur.left: 
-                s.append((cur.left, True))
-        return ans
+        # s, ans = deque([(root, False)]), 0
+        # while s:
+        #     cur, isLeft = s.pop()
+        #     if not cur.left and not cur.right and isLeft:
+        #         ans = ans + cur.val
+        #     if cur.right: 
+        #         s.append((cur.right, False))
+        #     if cur.left: 
+        #         s.append((cur.left, True))
+        # return ans
 
 # ✔️ Solution - III (BFS)
 # -------------------------------
-        # q, ans = deque([(root, False)]), 0
-        # while q:
-        #     cur, isLeft = q.popleft()
-        #     if not cur.left and not cur.right and isLeft:
-        #         ans = ans + cur.val
-        #     if cur.right:
-        #         q.append((cur.right, False))
-        #     if cur.left: 
-        #         q.append((cur.left, True))
-        # return ans
+        q, ans = deque([(root, False)]), 0
+        while q:
+            cur, isLeft = q.popleft()
+            if not cur.left and not cur.right and isLeft:
+                ans = ans + cur.val
+            if cur.right:
+                q.append((cur.right, False))
+            if cur.left: 
+                q.append((cur.left, True))
+        return ans
 
 # ✔️ Solution - IV (Morris Traversal)
 # ----------------------------------
