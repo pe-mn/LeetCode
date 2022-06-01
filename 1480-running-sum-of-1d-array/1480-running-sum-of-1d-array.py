@@ -8,14 +8,14 @@ class Solution:
         #     nums[i] = sum     
         # return nums
     
-        result = []
-        sum = 0
-        for i in range(len(nums)):
-            sum += nums[i]
-            result.append(sum)       
-        return result    
+        # result = []
+        # sum = 0
+        # for i in range(len(nums)):
+        #     sum += nums[i]
+        #     result.append(sum)       
+        # return result    
 # ----------------------------------------------------- 
-        # return [sum(nums[:i]) for i in range(1, len(nums) + 1)]
+        return [sum(nums[:i]) for i in range(1, len(nums) + 1)]
 # -----------------------------------------------------
 
 # Here we also learning how can we use assignment inside comprehension \U0001f601 using :
