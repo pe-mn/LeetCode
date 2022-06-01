@@ -1,7 +1,7 @@
 # from itertools import accumulate
 
-class Solution:
-    def runningSum(self, nums: List[int]) -> List[int]:
+# class Solution:
+#     def runningSum(self, nums: List[int]) -> List[int]:
         # sum = 0
         # for i, num in enumerate(nums):
         #     sum += num
@@ -20,8 +20,8 @@ class Solution:
 # Here we also learning how can we use assignment inside comprehension \U0001f601 using :
         # s = 0; return [s:=s+v for v in nums]    
 # -----------------------------------------------------
-        return accumulate(nums)
+        # return accumulate(nums)
 # -----------------------------------------------------
 # That's so long... watch this:
 
-# class Solution: runningSum = accumulate
+class Solution: runningSum = accumulate
