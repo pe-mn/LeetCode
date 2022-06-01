@@ -9,31 +9,31 @@ class Solution:
 # ---------------------------------------------------------------------
 # Using defaultdict beats 97%
 # ---------------------------
-        if len(s) != len(t):
-            return False 
-        count = collections.defaultdict(int)
-        for c in s:
-            count[c] += 1
-        for c in t:
-            count[c] -= 1
-            if count[c] < 0:
-                return False
-        return True
+        # if len(s) != len(t):
+        #     return False 
+        # count = collections.defaultdict(int)
+        # for c in s:
+        #     count[c] += 1
+        # for c in t:
+        #     count[c] -= 1
+        #     if count[c] < 0:
+        #         return False
+        # return True
 # ---------------------------------------------------------------------
     
-        # dic1, dic2 = {}, {}
-        # for item in s:
-        #     dic1[item] = dic1.get(item, 0) + 1
-        # for item in t:
-        #     dic2[item] = dic2.get(item, 0) + 1
-        # return dic1 == dic2
+        dic1, dic2 = {}, {}
+        for item in s:
+            dic1[item] = dic1.get(item, 0) + 1
+        for item in t:
+            dic2[item] = dic2.get(item, 0) + 1
+        return dic1 == dic2
     
-        # dic1, dic2 = [0]*26, [0]*26
-        # for item in s:
-        #     dic1[ord(item)-ord('a')] += 1
-        # for item in t:
-        #     dic2[ord(item)-ord('a')] += 1
-        # return dic1 == dic2
+        dic1, dic2 = [0]*26, [0]*26
+        for item in s:
+            dic1[ord(item)-ord('a')] += 1
+        for item in t:
+            dic2[ord(item)-ord('a')] += 1
+        return dic1 == dic2
 
 # instead of writing two for loops for s and t each, we can write in a single loop.        
         # if len(s) != len(t) : 
