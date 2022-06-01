@@ -5,7 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
+    # def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
         
 # https://leetcode.com/problems/sum-of-left-leaves/discuss/1558055/C%2B%2BPython-Recursive-and-Iterative-DFS-%2B-BFS-%2B-Morris-Traversal-O(1)-w-Explanation-or-Beats-100
 
@@ -69,16 +69,16 @@ class Solution:
 
 # -----------------------------------------------------------------------------
 
-        if not root: return 0
-        if root.left and not root.left.left and not root.left.right:
-            return root.left.val + self.sumOfLeftLeaves(root.right)
-        return self.sumOfLeftLeaves(root.left) + self.sumOfLeftLeaves(root.right)   # isn't leave
+        # if not root: return 0
+        # if root.left and not root.left.left and not root.left.right:
+        #     return root.left.val + self.sumOfLeftLeaves(root.right)
+        # return self.sumOfLeftLeaves(root.left) + self.sumOfLeftLeaves(root.right)   # isn't leave
 
 # -----------------------------------------------------------------------------
 
-    # def sumOfLeftLeaves(self, root, isLeft=False):
-    #     if not root: return 0
-    #     if not (root.left or root.right): return root.val * isLeft
-    #     return self.sumOfLeftLeaves(root.left, True) + self.sumOfLeftLeaves(root.right)
+    def sumOfLeftLeaves(self, root, isLeft=False):
+        if not root: return 0
+        if not (root.left or root.right): return root.val * isLeft
+        return self.sumOfLeftLeaves(root.left, True) + self.sumOfLeftLeaves(root.right)
 
         
