@@ -49,30 +49,30 @@ class Solution:
 
 # ✔️ Solution - IV (Morris Traversal)
 # ----------------------------------
-        ans = 0
-        while root:
-            if root.left:
-                pre, isLeft = root.left, True
-                while pre.right and pre.right != root:
-                    pre = pre.right
-                if not pre.right:
-                    pre.right = root
-                    root = root.left
-                else:
-                    pre.right = None
-                    if pre == root.left and not pre.left:
-                        ans = ans + pre.val
-                    root = root.right
-            else:
-                root = root.right
-        return ans
+        # ans = 0
+        # while root:
+        #     if root.left:
+        #         pre, isLeft = root.left, True
+        #         while pre.right and pre.right != root:
+        #             pre = pre.right
+        #         if not pre.right:
+        #             pre.right = root
+        #             root = root.left
+        #         else:
+        #             pre.right = None
+        #             if pre == root.left and not pre.left:
+        #                 ans = ans + pre.val
+        #             root = root.right
+        #     else:
+        #         root = root.right
+        # return ans
 
 # -----------------------------------------------------------------------------
 
-        # if not root: return 0
-        # if root.left and not root.left.left and not root.left.right:
-        #     return root.left.val + self.sumOfLeftLeaves(root.right)
-        # return self.sumOfLeftLeaves(root.left) + self.sumOfLeftLeaves(root.right)   # isn't leave
+        if not root: return 0
+        if root.left and not root.left.left and not root.left.right:
+            return root.left.val + self.sumOfLeftLeaves(root.right)
+        return self.sumOfLeftLeaves(root.left) + self.sumOfLeftLeaves(root.right)   # isn't leave
 
 # -----------------------------------------------------------------------------
 
