@@ -46,35 +46,35 @@ class Solution:
         # return dict1 == dict2 
         
 # instead of creating a second dictionary, we can try to "delete" from the first dictionary to save space.
-        if len(s) == len(t):
-            chars = defaultdict(int)
-            for l in s:
-                chars[l] += 1
+#         if len(s) == len(t):
+#             chars = defaultdict(int)
+#             for l in s:
+#                 chars[l] += 1
             
-            for l in t:
-                chars[l] -= 1
+#             for l in t:
+#                 chars[l] -= 1
             
-            return all(v == 0 for v in chars.values())
-        return False
+#             return all(v == 0 for v in chars.values())
+#         return False
 # ---------------------------------------------------------------------
 
-#         dic = {}
-#         for i in s:
-#             if i not in dic:
-#                 dic[i] = 1
-#             else:
-#                 dic[i] += 1
+        dic = {}
+        for i in s:
+            if i not in dic:
+                dic[i] = 1
+            else:
+                dic[i] += 1
         
-#         for j in t:
-#             if j not in dic:
-#                 return False
-#             else:
-#                 dic[j] -= 1
+        for j in t:
+            if j not in dic:
+                return False
+            else:
+                dic[j] -= 1
         
-#         for val in dic.values():
-#             if val != 0:
-#                 return False       
-#         return True
+        for val in dic.values():
+            if val != 0:
+                return False       
+        return True
         
 # ---------------------------------------------------------------------
     
