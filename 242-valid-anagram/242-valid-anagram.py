@@ -58,32 +58,32 @@ class Solution:
 #         return False
 # ---------------------------------------------------------------------
 
-        dic = {}
-        for i in s:
-            if i not in dic:
-                dic[i] = 1
-            else:
-                dic[i] += 1
+#         dic = {}
+#         for i in s:
+#             if i not in dic:
+#                 dic[i] = 1
+#             else:
+#                 dic[i] += 1
         
-        for j in t:
-            if j not in dic:
-                return False
-            else:
-                dic[j] -= 1
+#         for j in t:
+#             if j not in dic:
+#                 return False
+#             else:
+#                 dic[j] -= 1
         
-        for val in dic.values():
-            if val != 0:
-                return False       
-        return True
+#         for val in dic.values():
+#             if val != 0:
+#                 return False       
+#         return True
         
 # ---------------------------------------------------------------------
     
-        # d = dict()
-        # for i in s:
-        #     d[i] = d.get(i, 0) + 1        
-        # for j in t:
-        #     if j not in d:
-        #         return False
-        #     else:
-        #         d[j] -= 1
-        # return all(x==0 for x in d.values())
+        d = dict()
+        for i in s:
+            d[i] = d.get(i, 0) + 1        
+        for j in t:
+            if j not in d:
+                return False
+            else:
+                d[j] -= 1
+        return all(x==0 for x in d.values())
