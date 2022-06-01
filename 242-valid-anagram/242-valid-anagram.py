@@ -3,7 +3,7 @@ class Solution:
         
         # return sorted(s) == sorted(t)
 # ---------------------------------------------------------------------        
-        # return all([s.count(c)==t.count(c) for c in string.ascii_lowercase])
+        return all([s.count(c)==t.count(c) for c in string.ascii_lowercase])
 # ---------------------------------------------------------------------        
         # return collections.Counter(s) == collections.Counter(t)
 # ---------------------------------------------------------------------
@@ -78,12 +78,12 @@ class Solution:
         
 # ---------------------------------------------------------------------
     
-        d = dict()
-        for i in s:
-            d[i] = d.get(i, 0) + 1        
-        for j in t:
-            if j not in d:
-                return False
-            else:
-                d[j] -= 1
-        return all(x==0 for x in d.values())
+#         d = dict()
+#         for i in s:
+#             d[i] = d.get(i, 0) + 1        
+#         for j in t:
+#             if j not in d:
+#                 return False
+#             else:
+#                 d[j] -= 1
+#         return all(x==0 for x in d.values())
