@@ -83,3 +83,5 @@ class Solution:
         #             return True
         # return False
         
+# -----------------------------------------------------------------         
+# https://leetcode.com/problems/contains-duplicate/discuss/1698064/5-Different-Approaches-w-Explanations
