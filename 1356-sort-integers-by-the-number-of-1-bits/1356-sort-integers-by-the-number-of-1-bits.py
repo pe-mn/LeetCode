@@ -1,10 +1,10 @@
 class Solution:
     def sortByBits(self, arr: List[int]) -> List[int]:
-        # return sorted(arr, key=lambda x: (bin(x).count('1'), x))
+        return sorted(arr, key=lambda x: (bin(x).count('1'), x))
         
 # In case you need a code without using lib to count the bit:
 # -----------------------------------------------------------
-        return sorted(arr, key = lambda num : (sum((num >> i) & 1 for i in range(32)), num))
+        # return sorted(arr, key = lambda num : (sum((num >> i) & 1 for i in range(32)), num))
 
 
 #         def bit_count(x: int) -> int:
