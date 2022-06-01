@@ -13,17 +13,17 @@
 #         self.next = next
 class Solution:
     def getDecimalValue(self, head: ListNode) -> int:
-        ans = 0
-        while head:
-            ans = (ans << 1) | head.val
-            head = head.next
-        return ans
+        # ans = 0
+        # while head:
+        #     ans = (ans << 1) | head.val
+        #     head = head.next
+        # return ans
     
 # Use walrus operator in Python 3.8:
-        # ans = head.val
-        # while head := head.next:
-        #     ans = ans << 1 | head.val
-        # return ans
+        ans = head.val
+        while head := head.next:
+            ans = ans << 1 | head.val
+        return ans
         
 # Loop through the linked list and added value to answer.
         # ans = 0
