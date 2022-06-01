@@ -22,22 +22,32 @@ class Solution:
         #     if nums[i] == nums[i-1]:
         #         return True
         # return False      
-        
+
+# use set()
+# Time Complexity: O(n)
+# Space Complexity: O(n)
+        new_List = set()
+        for i in range(len(nums)):
+            if nums[i] in new_List:
+                return True
+            new_List.add(nums[i])
+        return False    
+    
 # use hash Table
 # Time Complexity: O(n)
 # Space Complexity: O(n)        
  
-        hashTable = {}
-        for i in range(len(nums)):
-            if nums[i] not in hashTable:
-                hashTable[nums[i]] = 1
-            else:
-                hashTable[nums[i]] += 1
+#         hashTable = {}
+#         for i in range(len(nums)):
+#             if nums[i] not in hashTable:
+#                 hashTable[nums[i]] = 1
+#             else:
+#                 hashTable[nums[i]] += 1
         
-        for i in range(len(nums)):
-            if hashTable[nums[i]] >= 2:
-                return True
-        return False
+#         for i in range(len(nums)):
+#             if hashTable[nums[i]] >= 2:
+#                 return True
+#         return False
     
     
         # hashTable = {}
