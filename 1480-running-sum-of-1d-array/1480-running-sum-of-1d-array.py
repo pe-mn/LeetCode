@@ -18,9 +18,9 @@ class Solution:
         # return [sum(nums[:i]) for i in range(1, len(nums) + 1)]
 # -----------------------------------------------------
 # Here we also learning how can we use assignment inside comprehension \U0001f601 using :
-        s = 0; return [s:=s+v for v in nums]    
+        # s = 0; return [s:=s+v for v in nums]    
 # -----------------------------------------------------
-        # return accumulate(nums)
+        return accumulate(nums)
 # -----------------------------------------------------
 # That's so long... watch this:
 
