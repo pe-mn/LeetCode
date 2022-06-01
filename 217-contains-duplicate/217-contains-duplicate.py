@@ -1,7 +1,12 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        return sorted(nums) != sorted(list(set(nums)))
-        
+        return len(nums) != len(set(nums))
+    
+# we need only to compare the lengths 
+# no need to compare the values 
+# -----------------------------------------------------------------
+        # return sorted(nums) != sorted(list(set(nums)))
+# -----------------------------------------------------------------        
 # Wrong Answer (as set changes the order)
 # ---------------------------------------
         # return nums != list(set(nums))
