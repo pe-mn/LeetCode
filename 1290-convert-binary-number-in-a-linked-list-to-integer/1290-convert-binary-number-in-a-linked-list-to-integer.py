@@ -20,17 +20,17 @@ class Solution:
         # return ans
     
 # Use walrus operator in Python 3.8:
-        ans = head.val
-        while head := head.next:
-            ans = ans << 1 | head.val
-        return ans
+        # ans = head.val
+        # while head := head.next:
+        #     ans = ans << 1 | head.val
+        # return ans
         
 # Loop through the linked list and added value to answer.
-        # ans = 0
-        # while head: 
-        #     ans = 2*ans + head.val 
-        #     head = head.next 
-        # return ans 
+        ans = 0
+        while head: 
+            ans = 2*ans + head.val 
+            head = head.next 
+        return ans 
     
 # num = 2^n*(1or0) + 2^(n-1)(1or0)...
 # with every loop, all previous n increase by 1, which equals num2
