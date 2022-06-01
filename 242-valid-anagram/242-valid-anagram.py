@@ -3,9 +3,9 @@ class Solution:
         
         # return sorted(s) == sorted(t)
 # ---------------------------------------------------------------------        
-        return all([s.count(c)==t.count(c) for c in string.ascii_lowercase])
+        # return all([s.count(c)==t.count(c) for c in string.ascii_lowercase])
 # ---------------------------------------------------------------------        
-        # return collections.Counter(s) == collections.Counter(t)
+        return collections.Counter(s) == collections.Counter(t)
 # ---------------------------------------------------------------------
 # Using defaultdict beats 97%
 # ---------------------------
