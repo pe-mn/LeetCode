@@ -13,34 +13,44 @@
 
 # -------------------------------------------------------------
 
+# # METHOD 1 (DATE_SUB)
 # SELECT W1.id FROM Weather W1 JOIN Weather W2 
 # ON W2.recordDate = DATE_SUB(W1.recordDate,interval 1 DAY)
 # WHERE W1.temperature > W2.temperature
 
+# SELECT W1.id FROM Weather W1, Weather W2 
+# WHERE W2.recordDate = DATE_SUB(W1.recordDate,interval 1 DAY)
+# AND W1.temperature > W2.temperature
+
 # -------------------------------------------------------------
 
+# # METHOD 2 (DATEDIFF)
 # SELECT W1.id FROM weather W1, weather W2 
-# WHERE datediff(W1.recordDate,W2.recordDate)=1 
+# WHERE DATEDIFF(W1.recordDate,W2.recordDate)=1 
 # AND W1.temperature>W2.temperature;
 
 # -------------------------------------------------------------
 
-# SELECT w2.id FROM Weather w1, Weather w2 
-# WHERE w2.recordDate = DATE_ADD(w1.recordDate, INTERVAL 1 DAY) 
-# AND w2.Temperature > w1.Temperature;
+# # METHOD 3 (DATE_ADD)
+# SELECT W1.id FROM Weather W2, Weather W1 
+# WHERE W1.recordDate = DATE_ADD(W2.recordDate, INTERVAL 1 DAY) 
+# AND W1.Temperature > W2.Temperature;
+
+# -------------------------------------------------------------
+
+# # METHOD 4 (TO_DAYS)
+SELECT W1.id FROM Weather W2, Weather W1 
+WHERE TO_DAYS(W1.recordDate) - TO_DAYS(W2.recordDate) = 1
+AND W1.Temperature > W2.Temperature;
 
 # -------------------------------------------------------------
 
 # # Wrong Answer
-# SELECT w2.id FROM Weather w1, Weather w2 
-# WHERE w2.recordDate - w1.recordDate = 1
-# AND w2.Temperature > w1.Temperature;
+# SELECT W1.id FROM Weather W2, Weather W1 
+# WHERE W1.recordDate - W2.recordDate = 1
+# AND W1.Temperature > W2.Temperature;
 
-# -------------------------------------------------------------
 
-SELECT w2.id FROM Weather w1, Weather w2 
-WHERE TO_DAYS(w2.recordDate) - TO_DAYS(w1.recordDate) = 1
-AND w2.Temperature > w1.Temperature;
 
 
 
