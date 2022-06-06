@@ -32,3 +32,19 @@ class Solution:
         return a
     
 # ---------------------------------------------------------------------------------------------------
+
+# https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/1092935/Python-Short-but-difficult-solution-explained
+
+# The idea of solution is the following:
+
+# Calculate lengths of both lists and evaluate difference.
+# Make this number of steps for the longest list, pointer p1 and pointer p2 put to start of short list.
+# Move pointers p1 and p2 one by one until we have the same value: it will be either common element or it will be None element.
+
+# First list has a elements before intersection and b elements after intersection.
+# Second list has c elements before intersection and b elements after intersection, and c > a.
+
+# On the first step we will reach end of first list and for the second list we will be c-a elements before end.
+# On the second step our short list ended, so now we start to traverse long list and after c-a steps one of the pointers will be in the beginning of short list and another will be c-a steps from the long list.
+# Finally, we move both pointers with speed one and either we will have common element or they both reach the end in the same time and in this case they will have common None element.
+# Complexity: we traverse both lists twice, so we will make no more than 2n + 2m = O(m+n). Space complexity is O(1).
