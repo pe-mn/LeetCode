@@ -3,18 +3,18 @@
 
 # Write your MySQL query statement below
 
-SELECT s.product_id, product_name 
-FROM Sales s LEFT JOIN Product p USING(product_id)
-GROUP BY s.product_id
-HAVING MIN(sale_date) >= CAST('2019-01-01' AS DATE) AND
-       MAX(sale_date) <= CAST('2019-03-31' AS DATE)
-       
-       
-# SELECT P.product_id, product_name 
-# FROM Product P LEFT JOIN Sales S USING(product_id)
-# GROUP BY P.product_id
+# SELECT s.product_id, product_name 
+# FROM Sales s LEFT JOIN Product p USING(product_id)
+# GROUP BY s.product_id
 # HAVING MIN(sale_date) >= CAST('2019-01-01' AS DATE) AND
 #        MAX(sale_date) <= CAST('2019-03-31' AS DATE)
+       
+       
+SELECT P.product_id, product_name 
+FROM Product P LEFT JOIN Sales S USING(product_id)
+GROUP BY P.product_id
+HAVING MIN(sale_date) >= CAST('2019-01-01' AS DATE) AND
+       MAX(sale_date) <= CAST('2019-03-31' AS DATE)
 
 
 # Wrong AnswerS
