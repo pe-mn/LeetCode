@@ -42,22 +42,22 @@ class Solution:
 # two-pointer (Faster)
 # --------------------
 # l --> left, r --> right
-        # l, r = 0, len(numbers)-1
-        # while l < r:
-        #     s = numbers[l] + numbers[r]
-        #     if s == target:
-        #         return [l+1, r+1]
-        #     elif s < target:
-        #         l += 1
-        #     else:
-        #         r -= 1
-                
-
         l, r = 0, len(numbers)-1
         while l < r:
-            if numbers[l] + numbers[r] == target: return (l + 1,  r + 1)
-            if numbers[l] + numbers[r] > target: r -= 1
-            else: l += 1
+            s = numbers[l] + numbers[r]
+            if s == target:
+                return [l+1, r+1]
+            elif s < target:
+                l += 1
+            else:
+                r -= 1
+                
+
+        # l, r = 0, len(numbers)-1
+        # while l < r:
+        #     if numbers[l] + numbers[r] == target: return (l + 1,  r + 1)
+        #     if numbers[l] + numbers[r] > target: r -= 1
+        #     else: l += 1
                 
 # Explanation:
 # The array is sorted in increasing order.
