@@ -15,16 +15,16 @@ class Solution:
 # ---------------------------------------------------------------------------    
 # If you use 'enumerate', code will be more readable.
     
-        used = {}
-        max_length = start = 0
-        for i, c in enumerate(s):
-            if c in used and start <= used[c]:
-                start = used[c] + 1
-            else:
-                max_length = max(max_length, i-start+1)
+#         used = {}
+#         max_length = start = 0
+#         for i, c in enumerate(s):
+#             if c in used and start <= used[c]:
+#                 start = used[c] + 1
+#             else:
+#                 max_length = max(max_length, i-start+1)
             
-            used[c] = i  
-        return max_length    
+#             used[c] = i  
+#         return max_length    
         
 # ---------------------------------------------------------------------------    
 # https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/347818/Python3%3A-sliding-window-O(N)-with-explanation     
@@ -58,6 +58,7 @@ class Solution:
 # Python dictionaries don't support duplicate keys.
 # So, strt value in wrong
 # --------------------------------------------------
+        # if s=="": return 0
         # if len(set(s))==1: return 1
         # seen = set()
         # sub_dict = {}
@@ -74,6 +75,7 @@ class Solution:
         #         print(sub_dict)
         # return max(sub_dict.values())        
         
+# ---------------------------------------------------------------------------    
         
 # Wrong Answer 
 # Input "bbbbb"
@@ -90,7 +92,28 @@ class Solution:
         #     else:     
         #         sub_dict[s[strt+1:i-1]] = len(s[strt+1:i-1])             
         # return max(sub_dict.values())
+        
+# ---------------------------------------------------------------------------    
+        # dic, res, start, = {}, 0, 0
+        # for i, ch in enumerate(s):
+        #     # when char already in dictionary
+        #     if ch in dic:
+        #         # check length from start of string to index
+        #         res = max(res, i-start)
+        #         # update start of string index to the next index
+        #         start = max(start, dic[ch]+1)
+        #     # add/update char to/of dictionary 
+        #     dic[ch] = i
+        # # answer is either in the begining/middle OR some mid to the end of string
+        # return max(res, len(s)-start)  
+# ---------------------------------------------------------------------------    
     
+        d, res, start = {}, 0, 0
+        for i, ch in enumerate(s):
+            if ch in d: start = max(start, d[ch]+1)
+            res = max(res, i-start+1)                
+            d[ch] = i
+        return res    
 
 # https://stackoverflow.com/questions/268272/getting-key-with-maximum-value-in-dictionary
 # max(sub_dict, key=sub_dict.get)
