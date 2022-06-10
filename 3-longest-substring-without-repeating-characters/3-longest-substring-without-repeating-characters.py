@@ -1,20 +1,33 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        start = maxLength = 0
-        usedChar = {}
+#         start = maxLength = 0
+#         usedChar = {}
         
-        for i in range(len(s)):
-            if s[i] in usedChar and start <= usedChar[s[i]]:
-                start = usedChar[s[i]] + 1
+#         for i in range(len(s)):
+#             if s[i] in usedChar and start <= usedChar[s[i]]:
+#                 start = usedChar[s[i]] + 1
+#             else:
+#                 maxLength = max(maxLength, i-start+1)
+
+#             usedChar[s[i]] = i
+#         return maxLength
+    
+# ---------------------------------------------------------------------------    
+# If you use 'enumerate', code will be more readable.
+    
+        used = {}
+        max_length = start = 0
+        for i, c in enumerate(s):
+            if c in used and start <= used[c]:
+                start = used[c] + 1
             else:
-                maxLength = max(maxLength, i - start + 1)
-
-            usedChar[s[i]] = i
-
-        return maxLength
+                max_length = max(max_length, i-start+1)
+            
+            used[c] = i  
+        return max_length    
         
 # ---------------------------------------------------------------------------    
-        
+# https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/347818/Python3%3A-sliding-window-O(N)-with-explanation     
 # Sliding window
 # ---------------
 # We use a dictionary to store the character as the key, the last appear index has been seen so far as value.
