@@ -94,26 +94,32 @@ class Solution:
         # return max(sub_dict.values())
         
 # ---------------------------------------------------------------------------    
-        # dic, res, start, = {}, 0, 0
-        # for i, ch in enumerate(s):
-        #     # when char already in dictionary
-        #     if ch in dic:
-        #         # check length from start of string to index
-        #         res = max(res, i-start)
-        #         # update start of string index to the next index
-        #         start = max(start, dic[ch]+1)
-        #     # add/update char to/of dictionary 
-        #     dic[ch] = i
-        # # answer is either in the begining/middle OR some mid to the end of string
-        # return max(res, len(s)-start)  
-# ---------------------------------------------------------------------------    
-    
-        d, res, start = {}, 0, 0
+        dic, res, start, = {}, 0, 0
         for i, ch in enumerate(s):
-            if ch in d: start = max(start, d[ch]+1)
-            res = max(res, i-start+1)                
-            d[ch] = i
-        return res    
+            # when char already in dictionary
+            if ch in dic:
+                # check length from start of string to index
+                res = max(res, i-start)
+                # update start of string index to the next index
+                start = max(start, dic[ch]+1)
+            # add/update char to/of dictionary 
+            dic[ch] = i
+        # answer is either in the begining/middle OR some mid to the end of string
+        return max(res, len(s)-start)  
+# ---------------------------------------------------------------------------    
+# {'p': 0}
+# {'p': 0, 'w': 1}
+# {'p': 0, 'w': 2}
+# {'p': 0, 'w': 2, 'k': 3}
+# {'p': 0, 'w': 2, 'k': 3, 'e': 4}
+# {'p': 0, 'w': 5, 'k': 3, 'e': 4}   
+
+        # d, res, start = {}, 0, 0
+        # for i, ch in enumerate(s):
+        #     if ch in d: start = max(start, d[ch]+1)
+        #     res = max(res, i-start+1)                
+        #     d[ch] = i
+        # return res    
 
 # https://stackoverflow.com/questions/268272/getting-key-with-maximum-value-in-dictionary
 # max(sub_dict, key=sub_dict.get)
