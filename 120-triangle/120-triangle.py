@@ -2,11 +2,18 @@
 
 class Solution:
     def minimumTotal(self, triangle: List[List[int]]) -> int:
-        for level in range(1, len(triangle)):
+# ✔️ Solution - I (In-Place Bottom-Up Dynamic Programming)
+        # for level in range(1, len(triangle)):
+        #     for i in range(level+1):
+        #         triangle[level][i] += min(triangle[level-1][min(i, level-1)], triangle[level-1][max(i-1,0)])
+        # return min(triangle[-1])  
+
+
+# ✔️ Solution - II (In-Place Top-Down Dynamic Programming)
+        for level in range(len(triangle)-2,-1,-1):
             for i in range(level+1):
-                triangle[level][i] += min(triangle[level-1][min(i, level-1)], triangle[level-1][max(i-1,0)])
-        return min(triangle[-1])        
-            
+                triangle[level][i] += min(triangle[level+1][i], triangle[level+1][i+1])
+        return triangle[0][0]
               
         
 # Wrong Answer        
