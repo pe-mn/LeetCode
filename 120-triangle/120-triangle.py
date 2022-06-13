@@ -10,10 +10,20 @@ class Solution:
 
 
 # ✔️ Solution - II (In-Place Top-Down Dynamic Programming)
-        for level in range(len(triangle)-2,-1,-1):
-            for i in range(level+1):
-                triangle[level][i] += min(triangle[level+1][i], triangle[level+1][i+1])
-        return triangle[0][0]
+        # for level in range(len(triangle)-2,-1,-1):
+        #     for i in range(level+1):
+        #         triangle[level][i] += min(triangle[level+1][i], triangle[level+1][i+1])
+        # return triangle[0][0]
+        
+# Solution - III (Bottom-Up Dynamic Programming w/ Auxillary Space)
+	    n = len(triangle)
+	    cur_row, prev_row = [0]*n, [0]*n
+	    prev_row[0] = triangle[0][0]  
+	    for level in range(1, n):
+		    for i in range(level+1):
+			    cur_row[i] = triangle[level][i] + min(prev_row[min(i, level-1)], prev_row[max(i-1,0)])
+		    cur_row, prev_row = prev_row, cur_row
+	    return min(prev_row)
               
         
 # Wrong Answer        
