@@ -75,12 +75,16 @@ class Solution:
 #         return s[l+1:r]
     
 # --------------------------------------------------------------------------------------
-    
+ 
+# max will accept only intergers/numbers. By including key=len you are defining that max function should take the length of the string as arguments.
+
         res = ""
         for i in range(len(s)):
             res = max(self.helper(s,i,i), self.helper(s,i,i+1), res, key=len)
-        return res      
-        
+        return res   
+    
+# get the longest palindrome, l, r are the middle indexes   
+# from inner to outer        
     def helper(self,s,l,r):     
         while 0<=l and r < len(s) and s[l]==s[r]:
                 l-=1; r+=1
