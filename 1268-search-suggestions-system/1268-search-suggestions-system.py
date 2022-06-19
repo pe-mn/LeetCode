@@ -12,23 +12,43 @@
 
 class Solution:
     def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:
-        # products.sort()
-        # prefix = ''
-        # res = []
-        # for char in searchWord:
-        #     prefix += char
-        #     res.append([p for p in products if p.startswith(prefix)][:3])            
-        # return res
+        products.sort(); prefix = ''; res = []
+        for char in searchWord:
+            prefix += char
+            res.append([p for p in products if p.startswith(prefix)][:3])            
+        return res
 
 # --------------------------------------------------------------------------------------
 
-        products.sort()
-        res, prefix, i = [], '', 0
-        for c in searchWord:
-            prefix += c
-            i = bisect.bisect_left(products, prefix, i)
-            res.append([w for w in products[i:i + 3] if w.startswith(prefix)])
-        return res
+        # products.sort()
+        # res, prefix, i = [], '', 0
+        # for c in searchWord:
+        #     prefix += c
+        #     i = bisect.bisect_left(products, prefix, i)
+        #     res.append([w for w in products[i:i + 3] if w.startswith(prefix)])
+        # return res
+        
+# Intuition
+# In a sorted list of words,
+# for any word A[i],
+# all its sugested words must following this word in the list.
+
+# For example, if A[i] is a prefix of A[j],
+# A[i] must be the prefix of A[i + 1], A[i + 2], ..., A[j]
+
+# Explanation
+# With this observation,
+# we can binary search the position of each prefix of search word,
+# and check if the next 3 words is a valid suggestion.
+
+
+# Complexity
+# Time O(NlogN) for sorting
+# Space O(logN) for quick sort.
+
+# Time O(logN) for each query
+# Space O(query) for each query
+# where I take word operation as O(1)
             
             
         
