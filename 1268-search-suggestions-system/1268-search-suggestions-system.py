@@ -12,12 +12,22 @@
 
 class Solution:
     def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:
+        # products.sort()
+        # prefix = ''
+        # res = []
+        # for char in searchWord:
+        #     prefix += char
+        #     res.append([p for p in products if p.startswith(prefix)][:3])            
+        # return res
+
+# --------------------------------------------------------------------------------------
+
         products.sort()
-        prefix = ''
-        res = []
-        for char in searchWord:
-            prefix += char
-            res.append([p for p in products if p.startswith(prefix)][:3])            
+        res, prefix, i = [], '', 0
+        for c in searchWord:
+            prefix += c
+            i = bisect.bisect_left(products, prefix, i)
+            res.append([w for w in products[i:i + 3] if w.startswith(prefix)])
         return res
             
             
