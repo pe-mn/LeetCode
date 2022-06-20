@@ -8,22 +8,22 @@ class Solution:
 # Finally the set will the set of all encoding words.
 # Iterate on the set and return sum(word's length + 1 for every word in the set)
 
-        # s = set(words)
-        # for w in words:
-        #     for i in range(1, len(w)):
-        #         s.discard(w[i:])
-        # return sum(len(w) + 1 for w in s)
+        s = set(words)
+        for w in words:
+            for i in range(1, len(w)):
+                s.discard(w[i:])
+        return sum(len(w) + 1 for w in s)
         
 # Trie Solution
 # ----------------
-        root = dict()
-        leaves = []
-        for word in set(words):
-            cur = root
-            for i in word[::-1]:
-                cur[i] = cur = cur.get(i, dict())
-            leaves.append((cur, len(word) + 1))
-        return sum(depth for node, depth in leaves if len(node) == 0)
+        # root = dict()
+        # leaves = []
+        # for word in set(words):
+        #     cur = root
+        #     for i in word[::-1]:
+        #         cur[i] = cur = cur.get(i, dict())
+        #     leaves.append((cur, len(word) + 1))
+        # return sum(depth for node, depth in leaves if len(node) == 0)
     
                                   
 # Wrong Answer
