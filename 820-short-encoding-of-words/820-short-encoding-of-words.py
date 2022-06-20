@@ -39,10 +39,11 @@ class Solution:
         
 #         res = 0  
 #         for i in range(len(words)):
+#             # Skip the word if it is a substring of any word in the list
 #             if any(word.endswith(words[i]) for word in words if len(words[i]) < len(word)):
 #                 continue
 #             else:
-#                 res += len(words[i]) + 1  # to account for the #                
+#                 res += len(words[i]) + 1  # use +1 to account for the "#"                    
 #         return res
                 
                 
