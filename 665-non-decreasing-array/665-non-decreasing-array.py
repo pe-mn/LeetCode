@@ -3,14 +3,23 @@
 # https://leetcode.com/problems/non-decreasing-array/discuss/106816/Python-Extremely-Easy-to-Understand
 
 class Solution:
-    def checkPossibility(self, nums: List[int]) -> bool:  
-        err = 0
-        for i in range(1, len(nums)):
-            if nums[i] < nums[i-1]:
-                if err or (i > 1 and i < len(nums) - 1 and nums[i-2] > nums[i] and nums[i+1] < nums[i-1]):
-                    return False
-                err = 1
-        return True
+    def checkPossibility(self, nums: List[int]) -> bool:          
+        one, two = nums[:], nums[:]
+        for i in range(len(nums) - 1):
+            if nums[i] > nums[i + 1]:
+                one[i] = nums[i + 1]
+                two[i + 1] = nums[i]
+                break
+        return one == sorted(one) or two == sorted(two)
+# ---------------------------------------------------------------------------------------
+    
+        # err = 0
+        # for i in range(1, len(nums)):
+        #     if nums[i] < nums[i-1]:
+        #         if err or (i > 1 and i < len(nums) - 1 and nums[i-2] > nums[i] and nums[i+1] < nums[i-1]):
+        #             return False
+        #         err = 1
+        # return True
     
 # ---------------------------------------------------------------------------------------
     
