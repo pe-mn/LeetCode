@@ -3,14 +3,28 @@
 # https://leetcode.com/problems/non-decreasing-array/discuss/106816/Python-Extremely-Easy-to-Understand
 
 class Solution:
-    def checkPossibility(self, nums: List[int]) -> bool:           
-        one, two = nums[:], nums[:]
-        for i in range(len(nums) - 1):
-            if nums[i] > nums[i + 1]:
-                one[i] = nums[i + 1]
-                two[i + 1] = nums[i]
-                break
-        return one == sorted(one) or two == sorted(two)
+    def checkPossibility(self, nums: List[int]) -> bool:  
+    # greedy, find i with nums[i-1]>nums[i]
+    # modify nums[i-1] or nums[i], e.g, [3,4,2,3]
+        cnt = 0
+        for i in range(1, len(nums)):
+            if nums[i - 1] > nums[i]:
+                cnt += 1
+                if i < 2 or nums[i - 2] <= nums[i]:
+                    nums[i - 1] = nums[i] # modify nums[i-1]
+                else:
+                    nums[i] = nums[i - 1] # modify nums[i]
+            if cnt > 1: return False
+        return True
+# ----------------------------------------------------------------------------------------
+    
+        # one, two = nums[:], nums[:]
+        # for i in range(len(nums) - 1):
+        #     if nums[i] > nums[i + 1]:
+        #         one[i] = nums[i + 1]
+        #         two[i + 1] = nums[i]
+        #         break
+        # return one == sorted(one) or two == sorted(two)
     
 # First, find a pair where the order is wrong. Then there are two possibilities, either the first in the pair can be modified or the second can be modified to create a valid sequence. We simply modify both of them and check for validity of the modified arrays by comparing with the array after sorting.
 # ----------------------------------------------------------------------------------------
