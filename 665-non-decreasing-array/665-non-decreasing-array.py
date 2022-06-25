@@ -11,7 +11,9 @@ class Solution:
                 two[i + 1] = nums[i]
                 break
         return one == sorted(one) or two == sorted(two)
-# ---------------------------------------------------------------------------------------
+    
+# First, find a pair where the order is wrong. Then there are two possibilities, either the first in the pair can be modified or the second can be modified to create a valid sequence. We simply modify both of them and check for validity of the modified arrays by comparing with the array after sorting.
+# ----------------------------------------------------------------------------------------
 # Wrong Answer
 # [5,7,1,8]
         # one, two = nums[:], nums[:]
